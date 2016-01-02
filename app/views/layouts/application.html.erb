@@ -13,12 +13,8 @@
     </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  
-  <p><%= link_to "エディター登録", new_editor_registration_path %></p>
-  
-  <% if editor_signed_in? %>
-  <p><%= link_to "ログアウト", destroy_editor_session_path, method: :delete %></p>
-  <% end %>
+
+
 
   </body>
 </html>
