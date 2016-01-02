@@ -1,13 +1,30 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "蔵書印DB「Zo-san」", '#', id: "logo" %>
+    <%= link_to "蔵書印DB「Zo-san」", 'root_path', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "ホーム",   '#' %></li>
+        <li><%= link_to "ホーム",   'root_path' %></li>
         <li><%= link_to "蔵書印検索",   '#' %></li>
     　　<li><%= link_to "蔵書印登録",   '#' %></li>
     　　<li><%= link_to "お問い合わせ",   '#' %></li>
-        <li><%= link_to "エディターログイン", '#' %></li>
+            <% if editor_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              エディターメニュー <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "蔵書印情報修正", '#' %></li>
+              <li><%= link_to "蔵書印情報削除", '#' %></li>
+              <li><%= link_to "エディター情報変更", edit_editor_registration_path %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "ログアウト", destroy_editor_session_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "エディターログイン", new_editor_session_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
