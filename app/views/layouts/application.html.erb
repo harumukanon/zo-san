@@ -11,5 +11,12 @@
     <div class="container">
       <%= yield %>
     </div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
+  <% if editor_signed_in? %>
+  <p><%= link_to "ログアウト", destroy_editor_session_path, method: :delete %></p>
+  <% end %>
+
   </body>
 </html>
