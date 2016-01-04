@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102133408) do
+ActiveRecord::Schema.define(version: 20160103094439) do
 
   create_table "editors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,5 +34,14 @@ ActiveRecord::Schema.define(version: 20160102133408) do
 
   add_index "editors", ["email"], name: "index_editors_on_email", unique: true
   add_index "editors", ["reset_password_token"], name: "index_editors_on_reset_password_token", unique: true
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "email",      null: false
+    t.string   "purpose"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
