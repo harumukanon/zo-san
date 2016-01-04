@@ -5,6 +5,11 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+if Rails.env == "development"
+  YAML.load(File.read(File.expand_path("secrets.yml", ENV["HOME"]))).each do |k, v|
+    ENV[k.to_s] = v.to_s
+  end
+end
 
 module ZoshoinDb
   class Application < Rails::Application

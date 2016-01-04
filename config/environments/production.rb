@@ -78,4 +78,14 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.action_mailer.default_url_options = { host: "zoshoin-db-zosan.herokuapp.com"}
+  
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => 'smtp.gmail.com',
+    :port => '587',
+    :domain => 'smtp.gmail.com',
+    :authentication => 'plain',
+    :user_name => ENV['SECRET1'],
+    :password => ENV['SECRET2']
+  }
 end
