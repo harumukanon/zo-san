@@ -80,6 +80,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "zoshoin-db-zosan.herokuapp.com"}
   
   config.action_mailer.smtp_settings = {
+    :logger => Logger,
     :enable_starttls_auto => true,
     :address => 'smtp.gmail.com',
     :port => '587',
