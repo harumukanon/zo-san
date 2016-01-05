@@ -79,14 +79,26 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: "zoshoin-db-zosan.herokuapp.com"}
   
-  config.action_mailer.smtp_settings = {
-    :logger => Logger,
-    :enable_starttls_auto => true,
-    :address => 'smtp.gmail.com',
-    :port => '587',
-    :domain => 'zoshoin-db-zosan.herokuapp.com',
-    :authentication => 'plain',
-    :user_name => ENV['SECRET1'],
-    :password => ENV['SECRET2']
-  }
+  package main
+
+  import (
+    "fmt"
+    "github.com/sendgrid/sendgrid-go"
+  )
+
+  func main() {
+    sg := sendgrid.NewSendGridClient("sendgrid_username", "sendgrid_password")
+    message := sendgrid.NewMail()
+    message.AddTo("mayizi@keio.jp")
+    message.AddToName("Maiko Kimura")
+    message.SetSubject("SendGrid Testing")
+    message.SetText("WIN")
+    message.SetFrom("app45696263@heroku.com")
+    if r := sg.Send(message); r == nil {
+        fmt.Println("Email sent!")
+    } else {
+        fmt.Println(r)
+    }
+    }
+  end
 end
