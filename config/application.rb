@@ -34,3 +34,6 @@ module ZoshoinDb
     end
   end
 end
+
+require 'pp'
+pp Rails.application.config.action_mailer
