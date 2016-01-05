@@ -84,7 +84,7 @@ Rails.application.configure do
     :enable_starttls_auto => true,
     :address => 'smtp.gmail.com',
     :port => '587',
-    :domain => 'smtp.gmail.com',
+    :domain => 'zoshoin-db-zosan.herokuapp.com',
     :authentication => 'plain',
     :user_name => ENV['SECRET1'],
     :password => ENV['SECRET2']
