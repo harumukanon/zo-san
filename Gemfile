@@ -54,3 +54,8 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'sendgrid-ruby'
+
+gem 'carrierwave'
+gem 'cloudinary'
+
+# gem 'rmagick'

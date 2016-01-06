@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103094439) do
+ActiveRecord::Schema.define(version: 20160106095037) do
 
   create_table "editors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20160103094439) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stamps", force: :cascade do |t|
+    t.string   "stamp_image"
+    t.string   "image_source"
+    t.string   "face_string"
+    t.string   "note"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

@@ -1,0 +1,46 @@
+<h1>蔵書印情報登録</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    
+     <%= form_for(@stamp, html: {class: "form-horizontal"}) do |f| %>
+   <% if @stamp.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @stamp.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+    <% end %>
+        <div class="form-group">
+            <label for="face_string" class="col-sm-3 control-label">蔵書印文</label>
+            <div class="col-sm-7">
+                <%= f.text_field :face_string, size: "5x5", class: "form-control" %>
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="stamp_image" class="col-sm-3 control-label">蔵書印画像</label>
+            <div class="col-sm-7">
+                <%= f.file_field :stamp_image, class: "form-control" %>
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="image_source" class="col-sm-3 control-label">画像出典</label>
+            <div class="col-sm-7">
+                <%= f.text_field :image_source, size: "5x10", class: "form-control" %>
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="note" class="col-sm-3 control-label">注記</label>
+            <div class="col-sm-7">
+                <%= f.text_area :note, size: "40x10", class: "form-control" %>
+             </div>
+        </div>
+      <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div> 
