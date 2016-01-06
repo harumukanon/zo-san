@@ -1,5 +1,8 @@
 <h1>NoticeMailer#hello</h1>
 
 <p>
-  <%= @greeting %>, find me in app/views/notice_mailer/hello.html.erb
+    <div>Name: <%= @message.name %></div>
+    <div>eMail: <%= @message.email %></div>
+    <div>Purpose: <%= @message.purpose %></div>
+    <div>Content: <%= @message.content %></div>
 </p>

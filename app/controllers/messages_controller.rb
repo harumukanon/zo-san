@@ -1,19 +1,26 @@
 class MessagesController < ApplicationController
+  before_action :set_message, only: [:show, :edit, :update, :destroy]
+
   def index
     @message = Message.new
   end
-  
+
+	# POST /posts
+  # POST /posts.json
   def create
     @message = Message.new(message_params)
-    if @message.save
-      redirect_to root_path , notice: 'メッセージを送信しました'
-    else
-      # メッセージが送信できなかった時
-      @messages = Message.all
-      flash.now[:alert] = "メッセージの送信に失敗しました。"
-      render 'index'
-    end
+      if @message.save
+
+      	# deliverメソッドを使って、メールを送信する
+      	NoticeMailer.hello(@message).deliver
+        redirect_to root_path, notice: "メッセージを送信しました"
+      else
+      # 保存に失敗した場合は編集画面へ戻す
+        render 'index', notice: "メッセージを送信できませんでした"
+      end
   end
+
+	
   
   private
   def message_params

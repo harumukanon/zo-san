@@ -1,3 +1,6 @@
 NoticeMailer#hello
 
-<%= @greeting %>, find me in app/views/notice_mailer/hello.text.erb
+    Name: <%= @message.name %>
+    eMail: <%= @message.email %>
+    Purpose: <%= @message.purpose %>
+    Content: <%= @message.content %>
