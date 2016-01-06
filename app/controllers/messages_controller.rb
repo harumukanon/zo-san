@@ -16,7 +16,8 @@ class MessagesController < ApplicationController
         redirect_to root_path, notice: "メッセージを送信しました"
       else
       # 保存に失敗した場合は編集画面へ戻す
-        render 'index', notice: "メッセージを送信できませんでした"
+        flash.now[:alert] = "メッセージを送信できませんでした"
+        render 'index'
       end
   end
 

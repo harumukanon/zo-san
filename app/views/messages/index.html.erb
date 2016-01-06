@@ -1,6 +1,18 @@
 <h1>蔵書印情報の訂正連絡/<br />その他のお問い合わせ</h1>
 <center><p class="bg-danger">エディター登録済みの方は，ログイン後，蔵書印情報の修正や削除をご自身で行っていただけます。</p></center>
  <%= form_for(@message, html: {class: "form-horizontal"}) do |f| %>
+   <% if @message.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @message.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+  <% end %>
     <div class="form-group">
       <label for="name" class="col-sm-3 control-label">お名前</label>
       <div class="col-sm-7">
