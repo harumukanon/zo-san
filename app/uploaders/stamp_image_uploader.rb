@@ -56,4 +56,21 @@ class StampImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+    include CarrierWave::RMagick
+    
+    version :thumb do
+    process :resize_to_limit => [300, 300]
+    end
+    
+    process :convert => 'jpg'
+    
+    def extension_white_list
+    %w(jpg jpeg gif png)
+    end
+    
+    def filename
+    time = Time.now
+    name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
+    name.downcase
+    end
 end

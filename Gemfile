@@ -58,4 +58,4 @@ gem 'sendgrid-ruby'
 gem 'carrierwave'
 gem 'cloudinary'
 
-# gem 'rmagick'
+gem 'rmagick'

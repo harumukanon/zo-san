@@ -1,7 +1,22 @@
 <p>
   蔵書印id:<%= @stamp.id %><br />
   蔵書印文:<%= @stamp.face_string %><br />
-  蔵書印画像:<%= image_tag(@stamp.stamp_image) %><br />
+  蔵書印画像:　
+  <% if @stamp.stamp_image? %>
+　　<%= image_tag(@stamp.stamp_image) %>
+　<% else %>
+　　<%= image_tag("no-image.png", :size => "200x200") %>
+　<% end %>
+　<br />
   画像出典:<%= @stamp.image_source %><br />
   注記:<%= @stamp.note %>
+  
+  <% if editor_signed_in? %>
+      <%= link_to "edit", edit_stamp_path %>
+    <% end %>
+  
+  <% if editor_signed_in? %>
+      <%= link_to "delete", stamp_path(@stamp), method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
 </p>
