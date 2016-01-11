@@ -33,7 +33,8 @@
             <label for="stamp_image" class="col-sm-3 control-label">蔵書印画像</label>
             <div class="col-sm-7">
                  <% if @stamp.stamp_image? %>
-　　                <%= image_tag(@stamp.stamp_image) %>
+　　                <%= image_tag @stamp.stamp_image.thumb.url %>
+　　                <br /><%= link_to "この画像を削除", remove_image_stamp_path(@stamp), data: { confirm: "You sure?" } %>
 　　                <%= f.file_field :stamp_image, class: "form-control" %>
 　               <% else %>
 　　                <%= f.file_field :stamp_image, class: "form-control" %>

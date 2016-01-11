@@ -1,0 +1,16 @@
+<p>
+  蔵書印主id:<%= @owner.id %><br />
+  名称:<%= @owner.aap %><br />
+  別名1:<%= @owner.vap1 %><br />
+  別名2:<%= @owner.vap2 %><br />
+  別名3:<%= @owner.vap3 %><br />
+  
+    <% if editor_signed_in? %>
+      <%= link_to "edit", edit_owner_path %>
+    <% end %>
+  
+    <% if editor_signed_in? %>
+      <%= link_to "delete", owner_path(@owner), method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+</p>

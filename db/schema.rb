@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106095037) do
+ActiveRecord::Schema.define(version: 20160111120521) do
 
   create_table "editors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20160106095037) do
     t.string   "email",      null: false
     t.string   "purpose"
     t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string   "aap"
+    t.string   "vap1"
+    t.string   "vap2"
+    t.string   "vap3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
