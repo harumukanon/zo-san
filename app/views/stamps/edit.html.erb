@@ -34,6 +34,7 @@
             <div class="col-sm-7">
                  <% if @stamp.stamp_image? %>
 　　                <%= image_tag(@stamp.stamp_image) %>
+　　                <%= f.file_field :stamp_image, class: "form-control" %>
 　               <% else %>
 　　                <%= f.file_field :stamp_image, class: "form-control" %>
 　　          　 <% end %>
