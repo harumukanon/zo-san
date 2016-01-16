@@ -1,0 +1,15 @@
+<div>
+  <% if @stamp.own?(@owner) %>
+    蔵書印主id:<%= @owner.id %>
+    印主名称:<%= @owner.aap %><br />
+    <%= link_to "印主情報を変更", owner_edit_path, class: "btn" %>
+  <% else %>
+    <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>
+        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "印主名を検索" %>
+        <%= hidden_field_tag :stamp_id, @stamp.id %>
+        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+            Search <i class="fa fa-search"></i>
+        <% end %>
+    <% end %>
+  <% end %>
+</div>

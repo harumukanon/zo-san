@@ -42,6 +42,16 @@ class OwnersController < ApplicationController
     end
   end
   
+  def search
+    keyword = params[:keyword]
+    @owner = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
+    @stamp = Stamp.find(params[:stamp_id])
+    if @owner == nil
+      redirect_to new_owner_path
+    end
+  end  
+
+  
   private
   
   def set_owner

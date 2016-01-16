@@ -1,0 +1,5 @@
+<%= form_for(@stamp.ownerships.find_by(owner_id: owner.id),
+             html: { method: :delete },
+             remote: true) do |form| %>
+  <%= form.submit "蔵書印主としての登録を解除", class: "btn" %>
+<% end %>

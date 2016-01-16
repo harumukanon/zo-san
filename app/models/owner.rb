@@ -1,3 +1,7 @@
 class Owner < ActiveRecord::Base
-    validates :aap, presence: true, length: { maximum: 255 }
+  has_many :ownerships , foreign_key: "owner_id", dependent: :destroy
+  has_many :stamps, through: :ownerships
+  
+  validates :aap, presence: true, length: { maximum: 255 }
+
 end

@@ -34,7 +34,7 @@
             <div class="col-sm-7">
                  <% if @stamp.stamp_image? %>
 　　                <%= image_tag @stamp.stamp_image.thumb.url %>
-　　                <br /><%= link_to "この画像を削除", remove_image_stamp_path(@stamp), data: { confirm: "You sure?" } %>
+　　                <%= link_to "この画像を削除", remove_image_stamp_path(@stamp), data: { confirm: "You sure?" }, class: "btn btn-small btn-danger"%>
 　　                <%= f.file_field :stamp_image, class: "form-control" %>
 　               <% else %>
 　　                <%= f.file_field :stamp_image, class: "form-control" %>
@@ -53,7 +53,7 @@
                 <%= f.text_area :note, size: "40x10", class: "form-control" %>
              </div>
         </div>
-      <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+      <%= f.submit "更新", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div> 

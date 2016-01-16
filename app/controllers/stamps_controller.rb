@@ -1,6 +1,6 @@
 class StampsController < ApplicationController
-  before_action :set_stamp, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_editor!, only: [:edit, :update, :destroy]
+  before_action :set_stamp, only: [:show, :edit, :update, :destroy, :remove_image]
+  before_action :authenticate_editor!, only: [:edit, :update, :destroy, :remove_image]
   
   def show
   end

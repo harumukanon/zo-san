@@ -6,7 +6,7 @@
   別名3:<%= @owner.vap3 %><br />
   
     <% if editor_signed_in? %>
-      <%= link_to "edit", edit_owner_path %>
+      <%= link_to "edit", edit_owner_path(@owner) %>
     <% end %>
   
     <% if editor_signed_in? %>

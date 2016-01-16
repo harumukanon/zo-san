@@ -1,0 +1,2 @@
+$("#owner-<%= @owner.id %>").html("<%= escape_javascript(render(partial: 'owners/owned', locals: {owner: @owner})) %>");
+$('#ow-<%= @owner.id %>').remove();

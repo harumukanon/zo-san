@@ -59,3 +59,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'rmagick'
+
+gem 'sparql', '~> 1.99'
+
+gem 'ransack'

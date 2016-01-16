@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111120521) do
+ActiveRecord::Schema.define(version: 20160113062657) do
 
   create_table "editors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20160111120521) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "ownerships", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.integer  "stamp_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ownerships", ["owner_id"], name: "index_ownerships_on_owner_id"
+  add_index "ownerships", ["stamp_id"], name: "index_ownerships_on_stamp_id"
 
   create_table "stamps", force: :cascade do |t|
     t.string   "stamp_image"
