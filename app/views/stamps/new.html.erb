@@ -1,5 +1,17 @@
 <h1>蔵書印情報登録</h1>
 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">登録の手順</h3>
+  </div>
+  <div class="panel-body">
+    1. まずこの画面から蔵書印情報を登録してください <br />
+    2. 登録完了後の画面から，印主情報を検索して登録してください <br />
+    3. 既存の印主情報が無い場合には，印主情報を新規登録する画面へジャンプします <br />
+    4. 最後にこの蔵書印が押されている資料情報を登録してください <br />
+    5. <%= link_to "エディター登録", new_editor_registration_path %>すると，全ての情報の編集・削除が可能となります
+  </div>
+</div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     
@@ -40,7 +52,7 @@
                 <%= f.text_area :note, size: "40x10", class: "form-control" %>
              </div>
         </div>
-      <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+      <center><%= f.submit "登録", class: "btn btn-large btn-primary" %></center>
     <% end %>
   </div>
 </div> 

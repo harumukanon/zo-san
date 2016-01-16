@@ -1,4 +1,4 @@
-<% if @owner.any? %>
+<% if @owners.any? %>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @owner.each do |f| %>
+      <% @owners.each do |f| %>
       <tr>
         <td><%= f.id %></td>
         <td><%= f.aap %></td>
@@ -28,5 +28,5 @@
     </tbody>
   </table>
 <% else %>
-  <% flash[:danger] = "印主情報が見つかりませんでした。" %>
+
 <% end %>

@@ -44,10 +44,11 @@ class OwnersController < ApplicationController
   
   def search
     keyword = params[:keyword]
-    @owner = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
+    @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
     @stamp = Stamp.find(params[:stamp_id])
-    if @owner == nil
-      redirect_to new_owner_path
+    unless @owners.any?
+     flash[:danger] = "印主情報が見つかりませんでした。"
+     redirect_to new_owner_url
     end
   end  
 
