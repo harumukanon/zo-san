@@ -1,5 +1,5 @@
 <%= form_for(@stamp.ownerships.build, remote: true) do |form| %>
   <div><%= hidden_field_tag :owner_id, owner.id %></div>
   <%= hidden_field_tag :stamp_id, @stamp.id %>
-  <%= form.submit "蔵書印主として登録", class: "btn btn-primary" %>
+  <%= form.submit "蔵書印主としてリンク", class: "btn btn-primary" %>
 <% end %>

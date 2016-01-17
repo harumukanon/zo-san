@@ -1,5 +1,4 @@
 class OwnershipsController < ApplicationController
-  before_action :authenticate_editor!, only: [:destroy]
 
   def create
     @owner = Owner.find(params[:owner_id])

@@ -1,0 +1,5 @@
+<%= form_for(@stamp.relationships.find_by(item_id: item.id),
+             html: { method: :delete },
+             remote: true) do |form| %>
+  <%= form.submit "押印ありリンクを解除", class: "btn" %>
+<% end %>

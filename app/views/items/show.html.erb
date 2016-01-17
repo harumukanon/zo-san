@@ -1,0 +1,41 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="col-xs-1">資料id</th>
+      <th class="col-xs-3">書名</th>
+      <th class="col-xs-2">著者</th>
+      <th class="col-xs-2">刊年</th>
+      <th class="col-xs-2">所蔵</th>
+      <th class="col-xs-2">注記</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @item.id %></td>
+      <td><%= @item.title %></td>
+      <td><%= @item.author %></td>
+      <td><%= @item.year %></td>
+      <td><%= @item.holding %></td>
+      <td><%= @item.note %></td>
+    </tr>
+  </tbody>
+</table>
+  <% if @stamp.present? %>
+    
+    <div id="item-<%= @item.id %>">
+    <% if @stamp.stamped?(@item) %>
+      <%= render partial: 'not_stamped_at', locals: {item: @item} %>
+    <% else %>
+      <%= render partial: 'stamped_at', locals: {item: @item} %>
+    <% end %></div>
+    <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
+ <% end %>
+
+    <% if editor_signed_in? %>
+      <%= link_to "edit", edit_item_path(@item) %>
+    <% end %>
+  
+    <% if editor_signed_in? %>
+      <%= link_to "delete", item_path(@item), method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>

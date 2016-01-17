@@ -19,6 +19,9 @@
   
   <% if editor_signed_in? %>
       <%= link_to "delete", stamp_path(@stamp), method: :delete,
-                                       data: { confirm: "You sure?" } %>
+                                       data: { confirm: "蔵書印情報を削除する前に，印主情報/資料情報とのリンクを解除済であることを確認してください。蔵書印情報を削除すると元に戻せません。本当に削除しますか？" } %>
     <% end %>
-</p>
+  
+  <%= render 'add_item' %>
+
+

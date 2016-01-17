@@ -1,5 +1,5 @@
 class StampsController < ApplicationController
-  before_action :set_stamp, only: [:show, :edit, :update, :destroy, :remove_image]
+  before_action :set_stamp, only: [:show, :edit, :update, :destroy, :remove_image, :see_items, :see_owners]
   before_action :authenticate_editor!, only: [:edit, :update, :destroy, :remove_image]
   
   def show
@@ -48,6 +48,24 @@ class StampsController < ApplicationController
     @stamp.save!
     redirect_to stamp_path(@stamp), info: "画像を削除しました"
   end
+  
+  def see_items
+      @items = @stamp.stamped_at
+      render 'stamped_items'
+  end
+  
+  def see_owners
+      @owners = @stamp.owned_by
+      render 'owned_owners'
+  end
+  
+  def search
+  keyword = params[:keyword]
+  @stamps = Stamp.search(:face_string_or_note_cont => keyword).result
+    unless @stamps.any?
+    flash[:danger] = "蔵書印情報が見つかりませんでした。"
+    end
+  end  
   
   private
   

@@ -1,0 +1,53 @@
+<h1>資料情報登録</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    
+     <%= form_for(@item, html: {class: "form-horizontal"}) do |f| %>
+   <% if @item.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @item.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+    <% end %>
+        <div class="form-group">
+            <label for="title" class="col-sm-3 control-label">書名</label>
+            <div class="col-sm-7">
+                <%= f.text_field :title, size: "5x5", class: "form-control" %>
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="author" class="col-sm-3 control-label">著者</label>
+            <div class="col-sm-7">
+                <%= f.text_field :author, size: "5x5", class: "form-control" %>
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="year" class="col-sm-3 control-label">刊年</label>
+            <div class="col-sm-7">
+                <%= f.text_field :year, size: "5x5", class: "form-control" %>
+             </div>
+        </div>
+        <div class="form-group">
+            <label for="holding" class="col-sm-3 control-label">所蔵</label>
+            <div class="col-sm-7">
+                <%= f.text_field :holding, size: "5x5", class: "form-control" %>
+             </div>
+        </div>
+                <div class="form-group">
+            <label for="item_note" class="col-sm-3 control-label">注記</label>
+            <div class="col-sm-7">
+                <%= f.text_area :note, size: "5x5", class: "form-control" %>
+             </div>
+        </div>
+    　<%= f.hidden_field :temp_stamp_id %>
+      <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div> 

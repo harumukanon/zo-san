@@ -1,10 +1,33 @@
-<p>
-  蔵書印主id:<%= @owner.id %><br />
-  名称:<%= @owner.aap %><br />
-  別名1:<%= @owner.vap1 %><br />
-  別名2:<%= @owner.vap2 %><br />
-  別名3:<%= @owner.vap3 %><br />
-  
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="col-xs-1">蔵書印主id</th>
+      <th class="col-xs-5">名称</th>
+      <th class="col-xs-2">別名1</th>
+      <th class="col-xs-2">別名2</th>
+      <th class="col-xs-2">別名3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @owner.id %></td>
+      <td><%= @owner.aap %></td>
+      <td><%= @owner.vap1 %></td>
+      <td><%= @owner.vap2 %></td>
+      <td><%= @owner.vap3 %></td>
+    </tr>
+  </tbody>
+</table>
+    <% if @stamp.present? %>
+    <div id="owner-<%= @owner.id %>">
+      <% if @stamp.own?(@owner) %>
+      <%= render partial: 'not_owned', locals: {owner: @owner} %>
+      <% else %>
+      <%= render partial: 'owned', locals: {owner: @owner} %>
+      <% end %></div>
+    <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
+    <% end %>
+    
     <% if editor_signed_in? %>
       <%= link_to "edit", edit_owner_path(@owner) %>
     <% end %>
@@ -13,4 +36,3 @@
       <%= link_to "delete", owner_path(@owner), method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
-</p>

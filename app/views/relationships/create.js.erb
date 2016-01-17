@@ -1,0 +1,1 @@
+$("#item-<%= @item.id %>").html("<%= escape_javascript(render(partial: 'items/not_stamped_at', locals: {item: @item})) %>");

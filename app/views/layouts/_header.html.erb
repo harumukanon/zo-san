@@ -4,7 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "ホーム",   root_path %></li>
-        <li><%= link_to "蔵書印検索",   '#' %></li>
+        <li><%= link_to "蔵書印検索", stamps_search_path %></li>
     　　<li><%= link_to "蔵書印登録", stamps_new_path %></li>
     　　<li><%= link_to "お問い合わせ", messages_path %></li>
             <% if editor_signed_in? %>

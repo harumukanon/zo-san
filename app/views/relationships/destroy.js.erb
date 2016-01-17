@@ -1,0 +1,2 @@
+$("#item-<%= @item.id %>").html("<%= escape_javascript(render(partial: 'items/stamped_at', locals: {item: @item})) %>");
+$('#itm-<%= @item.id %>').remove();

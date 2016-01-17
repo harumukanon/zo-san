@@ -1,12 +1,13 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: [:show, :edit, :update, :destroy]
+  before_action :set_stamp, only: [:show, :new, :search]
   before_action :authenticate_editor!, only: [:edit, :update, :destroy]
   
   def show
   end
   
   def new
-    @owner = Owner.new
+    @owner = Owner.new(temp_stamp_id: params[:stamp_id])
   end
   
   def edit
@@ -15,7 +16,7 @@ class OwnersController < ApplicationController
   def create
     @owner = Owner.new(owner_params)
     if @owner.save
-      redirect_to @owner
+      redirect_to owner_path(@owner, stamp_id: @owner.temp_stamp_id)
     else
       render 'new'
     end
@@ -45,15 +46,18 @@ class OwnersController < ApplicationController
   def search
     keyword = params[:keyword]
     @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
-    @stamp = Stamp.find(params[:stamp_id])
     unless @owners.any?
      flash[:danger] = "印主情報が見つかりませんでした。"
-     redirect_to new_owner_url
+     redirect_to new_owner_url(stamp_id: @stamp.id)
     end
   end  
 
   
   private
+  
+  def set_stamp
+    @stamp = Stamp.find_by(id: params[:stamp_id])
+  end
   
   def set_owner
     @owner = Owner.find(params[:id])
@@ -61,6 +65,6 @@ class OwnersController < ApplicationController
   
   def owner_params
     params.require(:owner).permit(:aap, :vap1, :vap2,
-                                 :vap3)
+                                 :vap3, :temp_stamp_id)
   end
 end

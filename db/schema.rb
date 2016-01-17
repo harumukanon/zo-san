@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113062657) do
+ActiveRecord::Schema.define(version: 20160117105225) do
 
   create_table "editors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20160113062657) do
   add_index "editors", ["email"], name: "index_editors_on_email", unique: true
   add_index "editors", ["reset_password_token"], name: "index_editors_on_reset_password_token", unique: true
 
+  create_table "items", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "year"
+    t.string   "holding"
+    t.string   "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "email",      null: false
@@ -49,9 +59,12 @@ ActiveRecord::Schema.define(version: 20160113062657) do
     t.string   "vap1"
     t.string   "vap2"
     t.string   "vap3"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "temp_stamp_id"
   end
+
+  add_index "owners", ["temp_stamp_id"], name: "index_owners_on_temp_stamp_id"
 
   create_table "ownerships", force: :cascade do |t|
     t.integer  "owner_id"
@@ -62,6 +75,17 @@ ActiveRecord::Schema.define(version: 20160113062657) do
 
   add_index "ownerships", ["owner_id"], name: "index_ownerships_on_owner_id"
   add_index "ownerships", ["stamp_id"], name: "index_ownerships_on_stamp_id"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "stamp_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "relationships", ["item_id"], name: "index_relationships_on_item_id"
+  add_index "relationships", ["stamp_id", "item_id"], name: "index_relationships_on_stamp_id_and_item_id", unique: true
+  add_index "relationships", ["stamp_id"], name: "index_relationships_on_stamp_id"
 
   create_table "stamps", force: :cascade do |t|
     t.string   "stamp_image"

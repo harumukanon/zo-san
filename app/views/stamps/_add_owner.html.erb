@@ -1,37 +1,30 @@
-<div>
+<div class="container">
   <% if @stamp.owners.exists? %>
   　<% @stamp.owners.each do |f| %>
-    <table id="ow-<%= f.id %>">
-      <tr>
-       <td>印主id:<%= f.id %></td>
-      </tr>
-      <tr>
-       <td>印主名:<%= f.aap %></td>
-       <td>  <% if editor_signed_in? %>
-                <%= link_to "edit", edit_owner_path(f) %>
-             <% end %>
-            <% if editor_signed_in? %>
-                <%= link_to "delete", @stamp.ownerships.find_by(owner_id: f.id), method: :delete, remote: :true,
-                          data: { confirm: "You sure?" } %>
-            <% end %></td>
-      </tr>
-    </table>
+    <div id="ow-<%= f.id %>" class="panel panel-success">
+      <div class="panel-heading">印主id:<%= f.id %></div>
+      <div class="panel-body">
+       印主名:<%= f.aap %><br />
+       <% if editor_signed_in? %>
+                <%= link_to "印主情報を修正", edit_owner_path(f) %>
+             <% end %></div>
+      </div>
     <% end %>
       印主を追加:
         <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>
         <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "印主名を検索" %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>
-          <%= button_tag(type: "submit", class: "btn btn-default") do %>
-            Search <i class="fa fa-search"></i>
-          <% end %>
+        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+            Search
+        <% end %>
         <% end %>
   <% else %>
     <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>
         <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "印主名を検索" %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
-            Search <i class="fa fa-search"></i>
+            Search
         <% end %>
-    <% end %>
+        <% end %>
   <% end %>
 </div>
