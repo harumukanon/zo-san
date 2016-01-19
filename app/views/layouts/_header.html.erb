@@ -1,7 +1,15 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+  <div class="container">  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="nav-menu-1">
     <%= link_to "蔵書印DB「Zo-san」", root_path, id: "logo" %>
-    <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "ホーム",   root_path %></li>
         <li><%= link_to "蔵書印検索", stamps_search_path %></li>
@@ -25,6 +33,6 @@
           <li><%= link_to "エディターログイン", new_editor_session_path %></li>
         <% end %>
       </ul>
-    </nav>
+     </div>
   </div>
 </header>

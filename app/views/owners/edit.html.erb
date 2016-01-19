@@ -40,6 +40,12 @@
                 <%= f.text_field :vap3, size: "5x5", class: "form-control" %>
              </div>
         </div>
+        <div class="form-group">
+            <label for="history" class="col-sm-3 control-label">伝記/歴史</label>
+            <div class="col-sm-7">
+                <%= f.text_area :history, size: "20x20", class: "form-control" %>
+            </div>
+        </div>
       <%= f.submit "更新", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>

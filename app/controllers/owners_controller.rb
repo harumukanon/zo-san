@@ -60,11 +60,11 @@ class OwnersController < ApplicationController
   end
   
   def set_owner
-    @owner = Owner.find(params[:id])
+    @owner = Owner.find_by(id: params[:id])
   end
   
   def owner_params
     params.require(:owner).permit(:aap, :vap1, :vap2,
-                                 :vap3, :temp_stamp_id)
+                                 :vap3, :temp_stamp_id, :history)
   end
 end

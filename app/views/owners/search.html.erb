@@ -7,6 +7,7 @@
                 <th class="col-xs-2">別名1</th>
                 <th class="col-xs-2">別名2</th>
                 <th class="col-xs-2">別名3</th>
+                <th class="col-xs-5">伝記/歴史</th>
               </tr>
             </thead>
             <tbody>
@@ -17,6 +18,7 @@
                 <td><%= f.vap1 %></td>
                 <td><%= f.vap2 %></td>
                 <td><%= f.vap3 %></td>
+                <td><%= f.history %></td>
                 <td id="owner-<%= f.id %>">
                   <% if @stamp.own?(f) %>
                   <%= render partial: 'not_owned', locals: {owner: f} %>
@@ -27,4 +29,7 @@
               <% end %>
             </tbody>
           </table>
+                <% if @stamp.present? %>
+                <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
+                <% end %>
         <% end %>

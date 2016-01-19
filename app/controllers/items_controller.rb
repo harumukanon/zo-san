@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
     @items = Item.search(:title_or_author_or_note_cont => keyword).result
     unless @items.any?
      flash[:danger] = "資料情報が見つかりませんでした。"
+     @item = Item.new(temp_stamp_id: params[:stamp_id])
      render 'new'
     end
   end 
@@ -60,12 +61,12 @@ private
   end  
   
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find_by(id: params[:id])
   end
   
   def item_params
     params.require(:item).permit(:title, :author, :year,
-                                 :holding, :note, :temp_stamp_id)
+                                 :holding, :note, :temp_stamp_id, :publisher)
   end
   
 end

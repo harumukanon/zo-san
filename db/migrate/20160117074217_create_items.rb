@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.string :year
+      t.string :publisher
       t.string :holding
       t.string :note
 

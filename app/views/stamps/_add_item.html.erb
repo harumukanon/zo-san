@@ -2,7 +2,9 @@
   <% if @stamp.items.exists? %>
   　<% @stamp.items.each do |f| %>
     <div id="itm-<%= f.id %>" class="panel panel-danger">
-       <div class="panel-heading">資料id:<%= f.id %></div>
+       <div class="panel-heading">
+           <h5 class="panel-title">資料id:<%= f.id %></h5>
+       </div>
        <div class="panel-body">
         書名:<%= f.title %><br />
 　　　  著者名:<%= f.author %><br />
@@ -11,7 +13,8 @@
 　　　  注記:<%= f.note %><br />
         <% if editor_signed_in? %>
                 <%= link_to "資料情報を修正", edit_item_path(f) %>
-            <% end %></div>
+            <% end %>
+      </div>
     </div>
     <% end %>
       資料を追加:

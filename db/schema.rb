@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160117105225) do
     t.string   "title"
     t.string   "author"
     t.string   "year"
+    t.string   "publisher"
     t.string   "holding"
     t.string   "note"
     t.datetime "created_at", null: false
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160117105225) do
     t.string   "vap1"
     t.string   "vap2"
     t.string   "vap3"
+    t.string   "history"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "temp_stamp_id"
@@ -74,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160117105225) do
   end
 
   add_index "ownerships", ["owner_id"], name: "index_ownerships_on_owner_id"
+  add_index "ownerships", ["stamp_id", "owner_id"], name: "index_ownerships_on_stamp_id_and_owner_id", unique: true
   add_index "ownerships", ["stamp_id"], name: "index_ownerships_on_stamp_id"
 
   create_table "relationships", force: :cascade do |t|

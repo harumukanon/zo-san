@@ -6,6 +6,7 @@
                 <th class="col-xs-3">書名</th>
                 <th class="col-xs-2">著者名</th>
                 <th class="col-xs-2">刊年</th>
+                <th class="col-xs-2">出版者</th>
                 <th class="col-xs-2">所蔵</th>
                 <th class="col-xs-2">注記</th>
               </tr>
@@ -17,10 +18,11 @@
                 <td><%= f.title %></td>
                 <td><%= f.author %></td>
                 <td><%= f.year %></td>
+                <td><%= f.publisher %></td>
                 <td><%= f.holding %></td>
                 <td><%= f.note %></td>
                 <td id="item-<%= f.id %>">
-                  <% if @stamp.own?(f) %>
+                  <% if @stamp.stamped?(f) %>
                   <%= render partial: 'not_stamped_at', locals: {item: f} %>
                   <% else %>
                   <%= render partial: 'stamped_at', locals: {item: f} %>
@@ -29,4 +31,7 @@
               <% end %>
             </tbody>
           </table>
+                <% if @stamp.present? %>
+                <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
+                <% end %>
         <% end %>

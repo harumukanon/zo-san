@@ -5,6 +5,7 @@ class CreateOwners < ActiveRecord::Migration
       t.string :vap1
       t.string :vap2
       t.string :vap3
+      t.string :history
 
       t.timestamps null: false
     end

@@ -63,3 +63,7 @@ gem 'rmagick'
 gem 'sparql', '~> 1.99'
 
 gem 'ransack'
+
+gem 'itaiji'
+
+gem 'pry-byebug', group: :development

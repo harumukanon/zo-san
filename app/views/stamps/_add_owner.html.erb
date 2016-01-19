@@ -2,13 +2,16 @@
   <% if @stamp.owners.exists? %>
   　<% @stamp.owners.each do |f| %>
     <div id="ow-<%= f.id %>" class="panel panel-success">
-      <div class="panel-heading">印主id:<%= f.id %></div>
+      <div class="panel-heading">
+        <h5 class="panel-title">印主id:<%= f.id %></h5>
+      </div>
       <div class="panel-body">
        印主名:<%= f.aap %><br />
        <% if editor_signed_in? %>
                 <%= link_to "印主情報を修正", edit_owner_path(f) %>
-             <% end %></div>
+             <% end %>
       </div>
+    </div>
     <% end %>
       印主を追加:
         <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>

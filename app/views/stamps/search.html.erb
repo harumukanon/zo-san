@@ -1,5 +1,5 @@
-        <%= form_tag({controller: :stamps, action: :search}, class: "form-inline") do %>
-        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "蔵書印を検索" %>
+        蔵書印から検索<%= form_tag({controller: :stamps, action: :search}, class: "form-inline") do %>
+        <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "蔵書印から検索" %>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search
         <% end %>
@@ -21,8 +21,12 @@
               <tr>
                 <td><%= link_to f.id, stamp_path(f) %></td>
                 <td><%= f.face_string %></td>
-                <td><%= image_tag f.stamp_image.thumb.url %></td>
-            </tr>
+                <td><% if f.stamp_image? %>
+　　              <%= image_tag f.stamp_image.thumb.url %>
+　                  <% else %>
+　　              <%= image_tag("no-image.png", :size => "100x100") %></td>
+      　             <% end %>
+             </tr>
             <% end %>
             </tbody>
           </table>
