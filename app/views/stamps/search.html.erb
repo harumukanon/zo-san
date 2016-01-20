@@ -1,33 +1,41 @@
+
         蔵書印から検索<%= form_tag({controller: :stamps, action: :search}, class: "form-inline") do %>
-        <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "蔵書印から検索" %>
-        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "蔵書印から検索" %>
+          <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search
+          <% end %>
         <% end %>
-        <% end %>
+        
         <% if @stamps.any? %>
           <table class="table table-hover">
             <thead>
               <tr>
                 <th class="col-xs-1">蔵書印id</th>
                 <th class="col-xs-2">蔵書印文</th>
-                <th class="col-xs-3">蔵書印画像</th>
-                <th class="col-xs-2">印主</th>
-                <th class="col-xs-3">資料名</th>
-                <th class="col-xs-1">資料所蔵</th>
+                <th class="col-xs-2">蔵書印画像</th>
+                <th class="col-xs-1">印主</th>
+                <th class="col-xs-2">資料名</th>
+                <th class="col-xs-2">資料所蔵</th>
               </tr>
             </thead>
             <tbody>
               <% @stamps.each do |f| %>
-              <tr>
-                <td><%= link_to f.id, stamp_path(f) %></td>
-                <td><%= f.face_string %></td>
-                <td><% if f.stamp_image? %>
-　　              <%= image_tag f.stamp_image.thumb.url %>
-　                  <% else %>
-　　              <%= image_tag("no-image.png", :size => "100x100") %></td>
-      　             <% end %>
-             </tr>
-            <% end %>
+                <tr>
+                  <td><%= link_to f.id, stamp_path(f) %></td>
+                  <td><%= f.face_string %></td>
+                  <td><% if f.stamp_image? %>
+　　                    <%= image_tag f.stamp_image.thumb.url %>
+　                    <% else %>
+　　                    <%= image_tag("no-image.png", :size => "100x100") %></td>
+      　               <% end %>
+                  <td><% f.owners.each do |owner| %>
+                      <%= owner.aap %>(id:<%= link_to owner.id, owner %>)<br /><% end %></td>
+      　           <td><% f.items.each do |item| %>
+      　               <%= item.title %>(id:<%=link_to item.id, item %>)<br /><% end %></td>
+      　           <td><% f.items.each do |item| %>
+      　               <%= item.holding %><br /><% end %></td>
+                </tr>
+              <% end %>
             </tbody>
           </table>
         <% end %>

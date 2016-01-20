@@ -19,7 +19,7 @@ class Stamp < ActiveRecord::Base
   end
   
   def own?(owner)
-      ownerships.include?(owner)
+      owners.include?(owner)
   end
   
   def stamped_at(item)
@@ -32,7 +32,7 @@ class Stamp < ActiveRecord::Base
   end
   
   def stamped?(item)
-      relationships.include?(item)
+      items.include?(item)
   end
       
 end
