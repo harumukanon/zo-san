@@ -1,5 +1,5 @@
 GIT
-  remote: /home/ubuntu/workspace/zoshoin-db/vendor/itaiji
+  remote: git://github.com/harumukanon/itaiji.git
   revision: a96f6157a161d0f80a7bf88ba2812a3712501039
   specs:
     itaiji (0.1.4)
