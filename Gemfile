@@ -64,6 +64,6 @@ gem 'sparql', '~> 1.99'
 
 gem 'ransack'
 
-gem 'itaiji', :git => '~/workspace/zoshoin-db/vendor/itaiji'
+gem 'itaiji', :git => '/home/ubuntu/workspace/zoshoin-db/vendor/itaiji'
 
 gem 'pry-byebug', group: :development

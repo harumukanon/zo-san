@@ -1,3 +1,9 @@
+GIT
+  remote: /home/ubuntu/workspace/zoshoin-db/vendor/itaiji
+  revision: a96f6157a161d0f80a7bf88ba2812a3712501039
+  specs:
+    itaiji (0.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,7 +98,6 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
-    itaiji (0.1.4)
     jbuilder (2.4.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -248,7 +253,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   config
   devise
-  itaiji
+  itaiji!
   jbuilder (~> 2.0)
   jquery-rails
   pg
