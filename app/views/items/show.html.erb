@@ -23,7 +23,6 @@
   </tbody>
 </table>
   <% if @stamp.present? %>
-    
     <div id="item-<%= @item.id %>">
     <% if @stamp.stamped?(@item) %>
       <%= render partial: 'not_stamped_at', locals: {item: @item} %>

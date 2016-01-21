@@ -44,8 +44,7 @@ class StampsController < ApplicationController
   end
   
   def remove_image
-    @stamp.stamp_image =""
-    @stamp.save!
+    @stamp.remove_stamp_image!
     redirect_to stamp_path(@stamp), info: "画像を削除しました"
   end
   

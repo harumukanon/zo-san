@@ -1,6 +1,6 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: [:show, :edit, :update, :destroy]
-  before_action :set_stamp, only: [:show, :new, :search]
+  before_action :set_stamp, only: [:show, :edit, :new, :search]
   before_action :authenticate_editor!, only: [:edit, :update, :destroy]
   
   def show
@@ -16,7 +16,7 @@ class OwnersController < ApplicationController
   def create
     @owner = Owner.new(owner_params)
     if @owner.save
-      redirect_to owner_path(@owner, stamp_id: @owner.temp_stamp_id)
+      redirect_to owner_url(@owner, stamp_id: @owner.temp_stamp_id)
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class OwnersController < ApplicationController
   def update
     if @owner.update(owner_params)
         flash[:success] = "印主情報が変更されました"
-        redirect_to @owner
+        redirect_to owner_url(@owner, stamp_id: @owner.temp_stamp_id)
     else
         #保存に失敗した場合は編集画面に戻す
         flash[:danger] = "印主情報の変更に失敗しました"

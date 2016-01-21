@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :set_stamp, only: [:show, :new, :search]
+  before_action :set_stamp, only: [:edit, :show, :new, :search]
   before_action :authenticate_editor!, only: [:edit, :update, :destroy]
   
   def show
@@ -55,8 +55,7 @@ class ItemsController < ApplicationController
     end
     unless @items.any?
      flash[:danger] = "資料情報が見つかりませんでした。"
-     @item = Item.new(temp_stamp_id: params[:stamp_id])
-     render 'new'
+     redirect_to new_item_url(stamp_id: @stamp.id)
     end
   end 
 

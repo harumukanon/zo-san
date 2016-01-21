@@ -36,6 +36,7 @@
 　　                <%= image_tag @stamp.stamp_image.thumb.url %>
 　　                <%= link_to "この画像を削除", remove_image_stamp_path(@stamp), data: { confirm: "You sure?" }, class: "btn btn-small btn-danger"%>
 　　                <%= f.file_field :stamp_image, class: "form-control" %>
+　　                <p>注：新しい画像をアップロードすると，以前の画像は自動的に削除されます。</p>
 　               <% else %>
 　　                <%= f.file_field :stamp_image, class: "form-control" %>
 　　          　 <% end %>

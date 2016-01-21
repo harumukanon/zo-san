@@ -46,6 +46,7 @@
                 <%= f.text_area :history, size: "20x20", class: "form-control" %>
             </div>
         </div>
+      <%= f.hidden_field :temp_stamp_id %>
       <%= f.submit "更新", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
