@@ -69,8 +69,10 @@ class StampImageUploader < CarrierWave::Uploader::Base
     end
     
     def filename
-    time = Time.now
-    name = time.strftime('%Y%m%d%H%M%S') + '.png' if original_filename.present?
-    name.downcase
+      if original_filename.present?
+        time = Time.now
+        name = time.strftime('%Y%m%d%H%M%S') + '.png'
+        name.downcase
+      end
     end
 end
