@@ -1,0 +1,34 @@
+        印主名から検索<%= form_tag({controller: :owners, action: :topsearch}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "印主名から検索" %>
+          <%= button_tag(type: "submit", class: "btn btn-default") do %>
+            Search
+          <% end %>
+        <% end %>
+        
+        <% if @owners.any? %>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th class="col-xs-1">印主id</th>
+                <th class="col-xs-1">印主名</th>
+                <th class="col-xs-2">蔵書印文</th>
+                <th class="col-xs-2">蔵書印画像</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @owners.each do |owner| %>
+                <tr>
+                  <td><%= link_to owner.id, owner_path(owner) %></td>
+                  <td><%= owner.aap %></td>
+                  <td><% owner.stamps.each do |stamp| %>
+                      <%= stamp.face_string %>(id:<%= link_to stamp.id, stamp %>)<br /><% end %></td>
+                  <td><% owner.stamps.each do |stamp| %>
+                          <% if stamp.stamp_image? %>
+　　                    <%= image_tag stamp.stamp_image.thumb.url %>(id:<%= link_to stamp.id, stamp %>)
+　                        <% else %>
+　　                    <%= image_tag("no-image.png", :size => "100x100") %><% end %><br /><% end %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% end %>

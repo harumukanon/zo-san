@@ -1,0 +1,38 @@
+        資料名から検索<%= form_tag({controller: :items, action: :topsearch}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "資料名から検索" %>
+          <%= button_tag(type: "submit", class: "btn btn-default") do %>
+            Search
+          <% end %>
+        <% end %>
+        
+        <% if @items.any? %>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th class="col-xs-1">資料id</th>
+                <th class="col-xs-1">書名</th>
+                <th class="col-xs-1">著者</th>
+                <th class="col-xs-2">所蔵</th>
+                <th class="col-xs-2">蔵書印文</th>
+                <th class="col-xs-2">蔵書印画像</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @items.each do |item| %>
+                <tr>
+                  <td><%= link_to item.id, item_path(item) %></td>
+                  <td><%= item.title %></td>
+                  <td><%= item.author %></td>
+                  <td><%= item.holding %></td>
+                  <td><% item.stamps.each do |stamp| %>
+                      <%= stamp.face_string %>(id:<%= link_to stamp.id, stamp %>)<br /><% end %></td>
+                  <td><% item.stamps.each do |stamp| %>
+                          <% if stamp.stamp_image? %>
+　　                    <%= image_tag stamp.stamp_image.thumb.url %>(id:<%= link_to stamp.id, stamp %>)
+　                        <% else %>
+　　                    <%= image_tag("no-image.png", :size => "100x100") %><% end %><br /><% end %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% end %>

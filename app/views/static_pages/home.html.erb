@@ -36,29 +36,47 @@
         <h1>蔵書印データベース ZO-SAN</h1>
         <p>ZO-SAN(ぞうさん）はユーザーが自由に蔵書印を登録し，検索できるサイトです。<br />中国目録学研究に貢献することを目指しています。</p>
         <p><%= link_to "蔵書印の登録", new_stamp_path, class: "btn btn-primary btn-lg" %></p>
+        <div class="col-sm-12 hidden-xs", align="right"><%= image_tag(asset_path("zosan_logo.png"), :size => "150x150") %></div>
       </div>
     </div>
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <div class="col-md-8">
+          <h2>検索</h2>
+          <%= form_tag({controller: :stamps, action: :search}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "蔵書印から検索" %>
+          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          Search
+          <% end %>
+          <% end %><br />
+        
+          <%= form_tag({controller: :owners, action: :topsearch}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "印主名から検索" %>
+          <%= button_tag(type: "submit", class: "btn btn-danger") do %>
+            Search<% end %>
+          <% end %><br />
+          
+          <%= form_tag({controller: :items, action: :topsearch}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "資料名から検索" %>
+          <%= button_tag(type: "submit", class: "btn btn-success") do %>
+            Search
+          <% end %>
+        　<% end %>
         </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
+        
         <div class="col-md-4">
           <h2>エディター登録</h2>
-          <p>エディター登録をすると，登録済みの全ての蔵書印データの編集・削除が可能となります。<br />編集・削除はマニュアルに従って行ってください。</p>
+          <p>エディター登録をすると，登録済みの全ての蔵書印データの編集・削除が可能となります。<br />編集・削除は<%= link_to "マニュアル", static_pages_manual_path %>に従って行ってください。</p>
           <p><%= link_to "エディター登録", new_editor_registration_path, class: "btn btn-large btn-primary" %></p>
         </div>
       </div>
-    </div> <!-- /container -->      
-<p><img src="zosan_logo.png" alt="zosan-logo" /></p>
+      <hr>
+
+      <footer>
+        <p>&copy; 2015 Maiko Kimura.</p>
+      </footer>
+    </div><!-- /container -->      
   </body>
 </html>

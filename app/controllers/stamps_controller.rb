@@ -59,7 +59,6 @@ class StampsController < ApplicationController
     else
       @stamps = Stamp.search(:face_string_or_note_cont => keyword).result
     end
-    
     unless @stamps.any?
     flash[:danger] = "蔵書印情報が見つかりませんでした。"
     end

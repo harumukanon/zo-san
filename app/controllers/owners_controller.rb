@@ -44,14 +44,36 @@ class OwnersController < ApplicationController
   end
   
   def search
-    keyword = params[:keyword]
-    @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
+  converter = Itaiji::Converter.new
+  keyword = params[:keyword]
+    unless keyword.nil?
+      keyword_itai = converter.convert_itaiji(keyword.clone)
+      keyword_seiji = converter.convert_seijitai(keyword.clone)
+      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_note_cont_any => [keyword_itai, keyword_seiji]).result
+    else
+      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
+    end
     unless @owners.any?
      flash[:danger] = "印主情報が見つかりませんでした。"
      redirect_to new_owner_url(stamp_id: @stamp.id)
     end
-  end  
-
+  end
+  
+  def topsearch
+  converter = Itaiji::Converter.new
+  keyword = params[:keyword]
+    unless keyword.nil?
+      keyword_itai = converter.convert_itaiji(keyword.clone)
+      keyword_seiji = converter.convert_seijitai(keyword.clone)
+      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_note_cont_any => [keyword_itai, keyword_seiji]).result
+    else
+      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
+    end
+    unless @owners.any?
+     flash[:danger] = "印主情報が見つかりませんでした。"
+     redirect_to 'root_path'
+    end
+  end
   
   private
   
