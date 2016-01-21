@@ -71,7 +71,6 @@ class OwnersController < ApplicationController
     end
     unless @owners.any?
      flash[:danger] = "印主情報が見つかりませんでした。"
-     redirect_to 'root_path'
     end
   end
   
