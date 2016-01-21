@@ -62,7 +62,7 @@ class StampImageUploader < CarrierWave::Uploader::Base
     process :resize_to_limit => [300, 300]
     end
     
-    process :convert => 'jpg'
+    process :convert => 'png'
     
     def extension_white_list
     %w(jpg jpeg gif png)
@@ -70,7 +70,7 @@ class StampImageUploader < CarrierWave::Uploader::Base
     
     def filename
     time = Time.now
-    name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
+    name = time.strftime('%Y%m%d%H%M%S') + '.png' if original_filename.present?
     name.downcase
     end
 end
