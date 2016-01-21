@@ -49,7 +49,7 @@ class OwnersController < ApplicationController
     unless keyword.nil?
       keyword_itai = converter.convert_itaiji(keyword.clone)
       keyword_seiji = converter.convert_seijitai(keyword.clone)
-      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_note_cont_any => [keyword_itai, keyword_seiji]).result
+      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_or_history_cont_any => [keyword_itai, keyword_seiji]).result
     else
       @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
     end
@@ -65,7 +65,7 @@ class OwnersController < ApplicationController
     unless keyword.nil?
       keyword_itai = converter.convert_itaiji(keyword.clone)
       keyword_seiji = converter.convert_seijitai(keyword.clone)
-      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_note_cont_any => [keyword_itai, keyword_seiji]).result
+      @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_or_history_cont_any => [keyword_itai, keyword_seiji]).result
     else
       @owners = Owner.search(:aap_or_vap1_or_vap2_or_vap3_cont => keyword).result
     end
