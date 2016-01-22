@@ -61,7 +61,7 @@ class StampsController < ApplicationController
     unless @stamps.any?
     flash[:danger] = "蔵書印情報が見つかりませんでした。"
     end
-  end  
+  end
   
   private
   
@@ -71,6 +71,6 @@ class StampsController < ApplicationController
 
   def stamp_params
     params.require(:stamp).permit(:face_string, :stamp_image, :image_source,
-                                 :note)
+                                 :note, :remove_stamp_image)
   end
 end

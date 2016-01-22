@@ -9,6 +9,7 @@ class StampImageUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     include Cloudinary::CarrierWave
+    process :tags => ['logo']
   else
     storage :file
   end

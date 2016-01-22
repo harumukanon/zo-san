@@ -27,7 +27,7 @@ module ZoshoinDb
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :ja
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.generators do |g|
@@ -37,5 +37,13 @@ module ZoshoinDb
       g.test_framework false
     end
     config.action_view.embed_authenticity_token_in_remote_forms = true
+  end
+end
+
+module RailsI18n
+  class Application < Rails::Application
+    config.i18n.available_locales = %i(ja en zh-TW)
+    config.i18n.enforce_available_locales = false
+    config.i18n.default_locale = :ja
   end
 end

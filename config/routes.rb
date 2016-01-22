@@ -24,4 +24,10 @@ Rails.application.routes.draw do
       get :remove_image
     end
   end
+  
+  scope '(:locale)', locale: /en|zh-TW/ do
+    resources :posts, param: :slug
+  end
+  
+  
 end

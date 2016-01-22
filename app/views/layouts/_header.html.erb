@@ -32,6 +32,9 @@
         <% else %>
           <li><%= link_to "エディターログイン", new_editor_session_path %></li>
         <% end %>
+          <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+          <li><%= link_to(locale_label(locale), i18n_url_for(params.merge(locale: locale))) %></li>
+        <% end %>
       </ul>
      </div>
   </div>
