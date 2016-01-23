@@ -59,3 +59,17 @@ en:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
 
+  db_title: The Ownership Stamps Database ZO-SAN
+  trial_operation: Currently under trial operation.
+  editor_sign_up: Editor Sign Up
+  
+  home: Home
+  create_stamps: Create a New Stamp Record
+  stamp_search: Search
+  contact: Contact
+  manual: Manuals
+  editor_change: Change Editor Info
+  logout: Logout
+  editor_sign_in: Login as Editor
+  menu: Editor's menu
+

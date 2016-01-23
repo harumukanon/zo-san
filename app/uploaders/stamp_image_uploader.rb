@@ -35,7 +35,7 @@ class StampImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  process :resize_to_limit => [300, 300]
   #
   # def scale(width, height)
   #   # do something
@@ -57,23 +57,23 @@ class StampImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-    include CarrierWave::RMagick
+  include CarrierWave::RMagick
     
-    version :thumb do
-    process :resize_to_limit => [300, 300]
-    end
+  version :thumb do
+   process :resize_to_limit => [150, 150]
+  end
     
-    process :convert => 'png'
+  process :convert => 'png'
     
-    def extension_white_list
+  def extension_white_list
     %w(jpg jpeg gif png)
-    end
+  end
     
-    def filename
-      if original_filename.present?
+  def filename
+    if original_filename.present?
         time = Time.now
         name = time.strftime('%Y%m%d%H%M%S') + '.png'
         name.downcase
-      end
     end
+  end
 end

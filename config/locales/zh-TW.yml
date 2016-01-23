@@ -205,3 +205,18 @@ zh-TW:
       long: "%Y年%b%d日 %H:%M"
       short: "%b%d日 %H:%M"
     pm: 下午
+    
+
+  db_title: 藏書印數據庫 ZO-SAN
+  trial_operation: 試用版
+  editor_sign_up: 編輯員註冊
+  
+  home: 首頁
+  create_stamps: 建立新記錄
+  stamp_search: 檢索藏書印
+  contact: 反饋/資訊
+  manual: 用戶/編輯員手冊
+  editor_change: 更新編輯員信息
+  logout: 退出
+  editor_sign_in: 編輯員登入
+  menu: 編輯員菜單

@@ -5,7 +5,7 @@
   蔵書印文:<%= @stamp.face_string %><br />
   蔵書印画像:　
   <% if @stamp.stamp_image? %>
-　　<%= image_tag @stamp.stamp_image.thumb.url %>
+　　<%= image_tag @stamp.stamp_image.url %>
 　<% else %>
 　　<%= image_tag(asset_path("no-image.png"), :size => "200x200") %>
 　<% end %>

@@ -7,6 +7,7 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+      
   date:
     abbr_day_names:
     - 日
@@ -200,3 +201,17 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
+
+  db_title: 蔵書印データベース ZO-SAN
+  trial_operation: 試験運用中です
+  editor_sign_up: エディター登録
+  
+  home: ホーム
+  create_stamps: 蔵書印登録
+  stamp_search: 蔵書印検索
+  contact: お問い合わせ
+  manual: マニュアル
+  editor_change: エディター情報変更
+  logout: ログアウト
+  editor_sign_in: エディターログイン
+  menu: エディターメニュー

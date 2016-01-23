@@ -12,7 +12,7 @@
 　　　  所蔵:<%= f.holding %><br />
 　　　  注記:<%= f.note %><br />
         <% if editor_signed_in? %>
-                <%= link_to "資料情報を修正", edit_item_path(f) %>
+                <%= link_to "資料情報を修正", edit_item_path(id: f, stamp_id: @stamp.id) %>
             <% end %>
       </div>
     </div>

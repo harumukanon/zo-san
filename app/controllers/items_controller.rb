@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to item_path(@item, stamp_id: @item.temp_stamp_id)
+      redirect_to item_url(@item, stamp_id: @item.temp_stamp_id)
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
         flash[:success] = "資料情報が変更されました"
-        redirect_to @item
+        redirect_to item_url(@item) + "?stamp_id=#{params[:stamp_id]}"
     else
         #保存に失敗した場合は編集画面に戻す
         flash[:danger] = "資料情報の変更に失敗しました"
@@ -77,11 +77,13 @@ class ItemsController < ApplicationController
 private
 
   def set_stamp
-    @stamp = Stamp.find_by(id: params[:stamp_id])
+    unless params[:stamp_id].nil?
+    @stamp = Stamp.find(params[:stamp_id])
+    end
   end  
   
   def set_item
-    @item = Item.find_by(id: params[:id])
+    @item = Item.find(params[:id])
   end
   
   def item_params

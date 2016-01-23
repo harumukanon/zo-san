@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :items
   resources :ownerships, only: [:create, :destroy]
+
   resources :owners
+  get '/owners/:id/stamp/:stamp_id',  as: :owner_with_stamp, controller: :owners, action: :edit
+
   resources :messages, only: [:index, :new, :create]
   resources :stamps do
     member do

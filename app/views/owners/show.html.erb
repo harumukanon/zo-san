@@ -27,7 +27,8 @@
       <% else %>
         <%= render partial: 'owned', locals: {owner: @owner} %>
       <% end %></div>
-      <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
+      
+    <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
     <% end %>
     
     <% if editor_signed_in? %>
