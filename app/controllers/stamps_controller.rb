@@ -24,6 +24,7 @@ class StampsController < ApplicationController
   
   def update
       if @stamp.update(stamp_params)
+        @stamp.save!
         flash[:success] = "蔵書印情報が変更されました"
         redirect_to @stamp
       else
