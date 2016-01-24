@@ -77,7 +77,7 @@ class OwnersController < ApplicationController
   private
   
   def set_stamp
-    unless params[:stamp_id].nil?
+    unless params[:stamp_id].blank?
     @stamp = Stamp.find(params[:stamp_id])
     end
   end
