@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   get 'static_pages/manual'
   
+  
   match 'owners/topsearch', to: 'owners#topsearch', via: ['post', 'get']
   match 'items/topsearch', to: 'items#topsearch', via: ['post', 'get']
   get 'stamps/new'
