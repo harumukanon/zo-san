@@ -210,10 +210,20 @@ zh-TW:
   db_title: 藏書印數據庫 ZO-SAN
   trial_operation: 試用版
   editor_sign_up: 編輯員註冊
-  
+  titlepageinfo: |
+    ZO-SAN是為用戶提供自由檢索和建立藏書印記錄功能的數據庫。
+    記錄和圖像僅供學術研究用途，請勿用於商業目的。
+  copyrights: 嚴禁以任何形式傳輸、複製、加工本數據庫内的部份或全部內容。
+  editor_info: |
+    已註冊的編輯員用戶可以更新或删除所有藏書印記錄。
+    操作前請認真閱讀%{manual}。
+  owner_search: 印主檢索
+  item_search: 資料檢索
+
   home: 首頁
   create_stamps: 建立新記錄
-  stamp_search: 檢索藏書印
+  stamp_search: 印文檢索
+  search: 檢索
   contact: 反饋/資訊
   manual: 用戶/編輯員手冊
   editor_change: 更新編輯員信息

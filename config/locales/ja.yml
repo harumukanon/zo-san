@@ -205,10 +205,20 @@ ja:
   db_title: 蔵書印データベース ZO-SAN
   trial_operation: 試験運用中です
   editor_sign_up: エディター登録
+  titlepageinfo: |
+    ZO-SAN(ぞうさん）はユーザーが自由に蔵書印を登録し，検索できるサイトです。
+    中国目録学研究に貢献することを目指しています。
+  copyrights: 本データベースに登録されている画像等の無断複製・転載を固く禁じます
+  editor_info: |
+    エディター登録をすると，登録済みの全ての蔵書印データの編集・削除が可能となります。
+    編集・削除は%{manual}に従って行ってください
+  owner_search: 印主名から検索
+  item_search: 資料名から検索
   
   home: ホーム
   create_stamps: 蔵書印登録
   stamp_search: 蔵書印検索
+  search: 検索
   contact: お問い合わせ
   manual: マニュアル
   editor_change: エディター情報変更

@@ -15,7 +15,7 @@
     <% end %>
       印主を追加:
         <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>
-        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "印主名を検索" %>
+        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: t('owner_search') %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search
@@ -23,7 +23,7 @@
         <% end %>
   <% else %>
     <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>
-        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "印主名を検索" %>
+        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: t('owner_search') %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search

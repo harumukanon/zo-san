@@ -1,6 +1,6 @@
 
-        蔵書印から検索<%= form_tag({controller: :stamps, action: :search}, class: "form-inline") do %>
-          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "蔵書印から検索" %>
+        <%= t('stamp_search') %><%= form_tag({controller: :stamps, action: :search}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: t('stamp_search') %>
           <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search
           <% end %>

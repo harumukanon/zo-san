@@ -19,7 +19,7 @@
     <% end %>
       資料を追加:
         <%= form_tag({controller: :items, action: :search}, class: "form-inline") do %>
-        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "資料を検索" %>
+        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: t('item_search') %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search
@@ -27,7 +27,7 @@
         <% end %>
   <% else %>
     <%= form_tag({controller: :items, action: :search}, class: "form-inline") do %>
-        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: "資料を検索" %>
+        <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: t('item_search') %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search

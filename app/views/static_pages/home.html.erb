@@ -33,11 +33,16 @@
       
     <div class="jumbotron">
       <div class="container">
-        <h1><%= t('db_title') %></h1>
-        <h2>【<%= t('trial_operation') %>】</h2>
-        <p>ZO-SAN(ぞうさん）はユーザーが自由に蔵書印を登録し，検索できるサイトです。<br />中国目録学研究に貢献することを目指しています。</p>
-        <p><%= link_to t('create_stamps'), new_stamp_path, class: "btn btn-primary btn-lg" %></p>
-        <div class="col-sm-12 hidden-xs", align="right"><%= image_tag(asset_path("zosan_logo.png"), :size => "150x150") %></div>
+            <h1><%= t('db_title') %></h1>
+            <h2>【<%= t('trial_operation') %>】</h2>
+            <p><%= simple_format(t('titlepageinfo')) %></p>
+        <div class = "row">
+            <div class="col-md-8">
+            <%= link_to t('create_stamps'), new_stamp_path, class: "btn btn-primary btn-lg" %>
+            </div>
+            <div class="col-md-4 hidden-xs", align="right"><%= image_tag(asset_path("zosan_logo.png"), :size => "150x150") %>
+            </div>
+        </div>
       </div>
     </div>
 
@@ -45,22 +50,22 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-8">
-          <h2>検索</h2>
+          <h2><%= t('search') %></h2>
           <%= form_tag({controller: :stamps, action: :search}, class: "form-inline") do %>
-          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "蔵書印から検索" %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: t('stamp_search') %>
           <%= button_tag(type: "submit", class: "btn btn-primary") do %>
           Search
           <% end %>
           <% end %><br />
         
           <%= form_tag({controller: :owners, action: :topsearch}, class: "form-inline") do %>
-          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "印主名から検索" %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: t('owner_search') %>
           <%= button_tag(type: "submit", class: "btn btn-danger") do %>
             Search<% end %>
           <% end %><br />
           
           <%= form_tag({controller: :items, action: :topsearch}, class: "form-inline") do %>
-          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "資料名から検索" %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: t('item_search') %>
           <%= button_tag(type: "submit", class: "btn btn-success") do %>
             Search
           <% end %>
@@ -69,13 +74,14 @@
         
         <div class="col-md-4">
           <h2><%= t('editor_sign_up') %></h2>
-          <p>エディター登録をすると，登録済みの全ての蔵書印データの編集・削除が可能となります。<br />編集・削除は<%= link_to t('manual'), static_pages_manual_path %>に従って行ってください。</p>
+          <p><%= simple_format(t('editor_info', manual: (link_to t('manual'),static_pages_manual_path))) %></p>
           <p><%= link_to t('editor_sign_up'), new_editor_registration_path, class: "btn btn-large btn-primary" %></p>
         </div>
       </div>
       <hr>
 
       <footer>
+        <p><%= t('copyrights') %></p>
         <p>&copy; 2015 Maiko Kimura.</p>
       </footer>
     </div><!-- /container -->      
