@@ -1,5 +1,5 @@
-        資料名から検索<%= form_tag({controller: :items, action: :topsearch}, class: "form-inline") do %>
-          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "資料名から検索" %>
+        <%= t('item_search') %><%= form_tag({controller: :items, action: :topsearch}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: t('item_search') %>
           <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search
           <% end %>
@@ -10,12 +10,12 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th class="col-xs-1">資料id</th>
-                <th class="col-xs-1">書名</th>
-                <th class="col-xs-1">著者</th>
-                <th class="col-xs-2">所蔵</th>
-                <th class="col-xs-2">蔵書印文</th>
-                <th class="col-xs-2">蔵書印画像</th>
+                <th class="col-xs-1"><%= t('item_id') %></th>
+                <th class="col-xs-1"><%= t('title') %></th>
+                <th class="col-xs-1"><%= t('author') %></th>
+                <th class="col-xs-2"><%= t('holding') %></th>
+                <th class="col-xs-2"><%= t('face_string') %></th>
+                <th class="col-xs-2"><%= t('stamp_image') %></th>
               </tr>
             </thead>
             <tbody>

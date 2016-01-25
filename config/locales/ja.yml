@@ -225,3 +225,25 @@ ja:
   logout: ログアウト
   editor_sign_in: エディターログイン
   menu: エディターメニュー
+  
+  tejun: 登録の手順
+  face_string: 蔵書印文
+  stamp_image: 蔵書印画像
+  image_source: 画像出典
+  note: 注記
+  
+  item_id: 資料ID
+  title: 書名
+  author: 著者名
+  year: 刊年
+  holding: 所蔵機関
+  revise_item: 修正
+  add_item: 資料を追加
+  
+  owner_id: 印主ID
+  revise_owner: 修正
+  owner: 印主名
+  add_owner: 印主を追加
+  
+  stamp_id: 蔵書印ID
+  danger: 蔵書印情報を削除する前に，印主情報/資料情報とのリンクを解除済であることを確認してください。蔵書印情報を削除すると元に戻せません。本当に削除しますか？"

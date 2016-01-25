@@ -230,3 +230,25 @@ zh-TW:
   logout: 退出
   editor_sign_in: 編輯員登入
   menu: 編輯員菜單
+
+  tejun: 建立流程說明
+  face_string: 印文
+  stamp_image: 圖像
+  image_source: 圖像出處
+  note: 附註
+  
+  item_id: 資料ID
+  title: 書名
+  author: 作者
+  year: 刊年
+  holding: 收藏機構
+  revise_item: 更改
+  add_item: 添加資料信息
+  
+  owner_id: 印主ID
+  revise_owner: 更改
+  owner: 印主
+  add_owner: 添加印主信息
+  
+  stamp_id: 藏書印ID
+  danger: 請確認本藏書印和印主或資料之間的關係已取消。刪除後不能回覆記錄。您肯定刪除嗎?

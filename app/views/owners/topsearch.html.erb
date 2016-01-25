@@ -1,5 +1,5 @@
-        印主名から検索<%= form_tag({controller: :owners, action: :topsearch}, class: "form-inline") do %>
-          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: "印主名から検索" %>
+        <%= t('owner_search') %><%= form_tag({controller: :owners, action: :topsearch}, class: "form-inline") do %>
+          <%= text_field_tag :keyword, '', size: '80%', class: "form-control", placeholder: t('owner_search') %>
           <%= button_tag(type: "submit", class: "btn btn-default") do %>
             Search
           <% end %>
@@ -9,10 +9,10 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th class="col-xs-1">印主id</th>
-                <th class="col-xs-1">印主名</th>
-                <th class="col-xs-2">蔵書印文</th>
-                <th class="col-xs-2">蔵書印画像</th>
+                <th class="col-xs-1"><%= t('owner_id') %></th>
+                <th class="col-xs-1"><%= t('owner') %></th>
+                <th class="col-xs-2"><%= t('face_string') %></th>
+                <th class="col-xs-2"><%= t('stamp_image') %></th>
               </tr>
             </thead>
             <tbody>

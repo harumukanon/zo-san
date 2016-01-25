@@ -3,21 +3,21 @@
   　<% @stamp.items.each do |f| %>
     <div id="itm-<%= f.id %>" class="panel panel-danger">
        <div class="panel-heading">
-           <h5 class="panel-title">資料id:<%= f.id %></h5>
+           <h5 class="panel-title"><%= t('item_id') %>:<%= f.id %></h5>
        </div>
        <div class="panel-body">
-        書名:<%= f.title %><br />
-　　　  著者名:<%= f.author %><br />
-　　　  刊年:<%= f.year %><br />
-　　　  所蔵:<%= f.holding %><br />
-　　　  注記:<%= f.note %><br />
+        <%= t('title') %>:<%= f.title %><br />
+　　　  <%= t('author') %>:<%= f.author %><br />
+　　　  <%= t('year') %>:<%= f.year %><br />
+　　　  <%= t('holding') %>:<%= f.holding %><br />
+　　　  <%= t('note') %>:<%= f.note %><br />
         <% if editor_signed_in? %>
-                <%= link_to "資料情報を修正", edit_item_path(id: f, stamp_id: @stamp.id) %>
+                <%= link_to t('revise_item'), edit_item_path(id: f, stamp_id: @stamp.id) %>
             <% end %>
       </div>
     </div>
     <% end %>
-      資料を追加:
+      <%= t('add_item') %>:
         <%= form_tag({controller: :items, action: :search}, class: "form-inline") do %>
         <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: t('item_search') %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>

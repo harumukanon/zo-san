@@ -83,3 +83,24 @@ en:
   editor_sign_in: Login as Editor
   menu: Editor's menu
 
+  tejun: How to
+  face_string: Face strings
+  stamp_image: Image
+  image_source: Source of image
+  note: Note
+  
+  item_id: Item id
+  title: Title
+  author: Author
+  year: Published year
+  holding: Holding
+  revise_item: Revise
+  add_item: Add item
+  
+  owner_id: Owner id
+  revise_owner: Revise
+  owner: Owner name
+  add_owner: Add owner
+
+  stamp_id: Stamp id
+  danger: Confirm you have already unlinked relationships between the stamp and items/owners. You cannot undo a record deletion operation. Are you sure?

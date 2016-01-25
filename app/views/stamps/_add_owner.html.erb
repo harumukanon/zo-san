@@ -3,17 +3,17 @@
   　<% @stamp.owners.each do |f| %>
     <div id="ow-<%= f.id %>" class="panel panel-success">
       <div class="panel-heading">
-        <h5 class="panel-title">印主id:<%= f.id %></h5>
+        <h5 class="panel-title"><%= t('owner_id') %>:<%= f.id %></h5>
       </div>
       <div class="panel-body">
-       印主名:<%= f.aap %><br />
+       <%= t('owner') %>:<%= f.aap %><br />
        <% if editor_signed_in? %>
-                <%= link_to "印主情報を修正", edit_owner_path(id: f, stamp_id: @stamp.id) %>
+                <%= link_to t('revise_owner'), edit_owner_path(id: f, stamp_id: @stamp.id) %>
              <% end %>
       </div>
     </div>
     <% end %>
-      印主を追加:
+      <%= t('add_owner') %>:
         <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>
         <%= text_field_tag :keyword, '', size: '100%', class: "form-control", placeholder: t('owner_search') %>
         <%= hidden_field_tag :stamp_id, @stamp.id %>

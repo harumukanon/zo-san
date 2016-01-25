@@ -2,7 +2,7 @@
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-    <h3 class="panel-title">登録の手順</h3>
+    <h3 class="panel-title"><%= t('tejun') %></h3>
   </div>
   <div class="panel-body">
     1. まずこの画面から蔵書印情報を登録してください <br />
@@ -30,25 +30,25 @@
     </div>
     <% end %>
         <div class="form-group">
-            <label for="face_string" class="col-sm-3 control-label">蔵書印文</label>
+            <label for="face_string" class="col-sm-3 control-label"><%= t('face_string') %></label>
             <div class="col-sm-7">
                 <%= f.text_field :face_string, size: "5x5", class: "form-control" %>
              </div>
         </div>
         <div class="form-group">
-            <label for="stamp_image" class="col-sm-3 control-label">蔵書印画像</label>
+            <label for="stamp_image" class="col-sm-3 control-label"><%= t('stamp_image') %></label>
             <div class="col-sm-7">
                 <%= f.file_field :stamp_image, class: "form-control" %>
              </div>
         </div>
         <div class="form-group">
-            <label for="image_source" class="col-sm-3 control-label">画像出典</label>
+            <label for="image_source" class="col-sm-3 control-label"><%= t('image_source') %></label></label>
             <div class="col-sm-7">
                 <%= f.text_field :image_source, size: "5x10", class: "form-control" %>
              </div>
         </div>
         <div class="form-group">
-            <label for="note" class="col-sm-3 control-label">注記</label>
+            <label for="note" class="col-sm-3 control-label"><%= t('note') %></label>
             <div class="col-sm-7">
                 <%= f.text_area :note, size: "40x10", class: "form-control" %>
              </div>
