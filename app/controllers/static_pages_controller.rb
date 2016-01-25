@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   end
   
   def about
-　　@logo = Cloudinary::Uploader.multi("logo", :format => 'zip')
+    @logo = Cloudinary::Uploader.multi("logo", :format => 'zip')
   end
   
   def manual
