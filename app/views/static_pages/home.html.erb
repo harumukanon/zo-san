@@ -74,12 +74,12 @@
         <% if editor_signed_in? %>
         <div class="col-md-4">
           <h2>サインイン中</h2>
-          <p><%= simple_format(t('editor_info', manual: (link_to t('manual'),static_pages_manual_path))) %></p>
+          <p><%= simple_format(t('loggedin_info', manual: (link_to t('manual'),static_pages_manual_path))) %></p>
         </div>
         <% else %>
         <div class="col-md-4">
           <h2><%= t('editor_sign_up') %></h2>
-          <p><%= simple_format(t('loggedin_info', manual: (link_to t('manual'),static_pages_manual_path))) %></p>
+          <p><%= simple_format(t('editor_info', manual: (link_to t('manual'),static_pages_manual_path))) %></p>
           <p><%= link_to t('editor_sign_up'), new_editor_registration_path, class: "btn btn-large btn-primary" %></p>
         </div>
         <% end %>
