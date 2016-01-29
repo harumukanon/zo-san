@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :publisher
       t.string :holding
       t.string :note
+      t.string :code
 
       t.timestamps null: false
     end

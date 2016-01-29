@@ -69,6 +69,9 @@ en:
   editor_info: |
     After sign up as an Editor, you can edit and delete any records in this database.
     Editors should read the %{manual} carefully before you start.
+  loggedin_info: |
+    Now you can edit and delete any records in this database as an editor.
+    Editors should read the %{manual} carefully before you start.
   owner_search: Search Owners
   item_search: Search Items
 

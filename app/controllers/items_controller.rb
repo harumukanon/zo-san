@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
     unless keyword.nil?
       keyword_itai = converter.convert_itaiji(keyword.clone)
       keyword_seiji = converter.convert_seijitai(keyword.clone)
-      @items = Item.search(:title_or_author_or_note_cont_any => [keyword_itai, keyword_seiji], id_eq: keyword, m: 'or').result
+      @items = Item.search(:title_or_author_or_note_cont_any => [keyword_itai, keyword_seiji], code_eq: keyword, m: 'or').result
     else
       @items = Item.search(:title_or_author_or_note_cont => keyword).result
     end
@@ -88,7 +88,7 @@ private
   
   def item_params
     params.require(:item).permit(:title, :author, :year,
-                                 :holding, :note, :temp_stamp_id, :publisher)
+                                 :holding, :note, :temp_stamp_id, :publisher, :code)
   end
   
 end
