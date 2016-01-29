@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160117105225) do
     t.string   "publisher"
     t.string   "holding"
     t.string   "note"
+    t.string   "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
