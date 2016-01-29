@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :ownerships, only: [:create, :destroy]
 
   resources :owners
-  get '/owners/:id/stamp/:stamp_id',  as: :owner_with_stamp, controller: :owners, action: :edit
+  get '/owners/:id/stamp/:stamp_id',  as: :owner_with_stamp, controller: :owners, action: :show
 
   resources :messages, only: [:index, :new, :create]
   resources :stamps do
