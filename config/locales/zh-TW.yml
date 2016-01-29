@@ -217,6 +217,7 @@ zh-TW:
   editor_info: |
     已註冊的編輯員用戶可以更新或删除數據庫內所有記錄。
     操作前請認真閱讀%{manual}。
+  logged_in: 已登入
   loggedin_info: |
     您可以更新或删除數據庫內所有記錄。
     操作前請認真閱讀%{manual}。

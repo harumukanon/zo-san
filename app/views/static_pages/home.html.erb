@@ -73,7 +73,7 @@
         </div>
         <% if editor_signed_in? %>
         <div class="col-md-4">
-          <h2>サインイン中</h2>
+          <h2><%= t('logged_in') %></h2>
           <p><%= simple_format(t('loggedin_info', manual: (link_to t('manual'),static_pages_manual_path))) %></p>
         </div>
         <% else %>
