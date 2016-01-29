@@ -53,8 +53,7 @@ Item.create_by( title:'韋蘇州集十巻拾遺一巻', code: '38')
 Item.create_by( title:'棠湖詩藁一巻', code: '39')	
 Item.create_by( title:'雲仙散録一巻', code: '40')	
 Item.create_by( title:'新定三礼図二十巻', code: '41')	
-"Item.create_by( title:'東莱呂太史文集十五巻別集十六巻外集五巻
-麗沢論説集録十巻附録三巻附録拾遺一巻', code: '42')"	
+Item.create_by( title:'東莱呂太史文集十五巻別集十六巻外集五巻麗沢論説集録十巻附録三巻附録拾遺一巻', code: '42')	
 Item.create_by( title:'通典二百巻', code: '43')	
 Item.create_by( title:'通典二百巻', code: '44')	
 Item.create_by( title:'四家四六四巻', code: '45')	
@@ -72,9 +71,7 @@ Item.create_by( title:'新刊剣南詩藁二十巻', code: '56')
 Item.create_by( title:'龍龕手鑑四巻', code: '57')	
 Item.create_by( title:'愧郯録十五巻', code: '58')	
 Item.create_by( title:'西疇居士春秋本例二十巻', code: '59')	
-"Item.create_by( title:'纂図分門類題五臣注揚子法言十巻
-新増麗沢編次揚子事実品題一巻
-新刊揚子門類題目一巻', code: '60')"	
+Item.create_by( title:'纂図分門類題五臣注揚子法言十巻新増麗沢編次揚子事実品題一巻新刊揚子門類題目一巻', code: '60')
 Item.create_by( title:'嘯堂集古録二巻', code: '61')	
 Item.create_by( title:'新序十巻', code: '62')	
 Item.create_by( title:'管子二十四巻', code: '63')	
@@ -158,8 +155,7 @@ Item.create_by( title:'漢雋十巻', code: '140')
 Item.create_by( title:'広韻五巻', code: '141')	
 Item.create_by( title:'孟子或問纂要一巻', code: '142')	
 Item.create_by( title:'春秋五礼例宗十巻', code: '143')	
-"Item.create_by( title:'慶元府雪竇明覚大師祖英集二巻瀑泉集一巻
-雪竇顕和尚明覚大師頌古集一巻雪竇和尚拈古一巻', code: '144')"	
+Item.create_by( title:'慶元府雪竇明覚大師祖英集二巻瀑泉集一巻雪竇顕和尚明覚大師頌古集一巻雪竇和尚拈古一巻', code: '144')
 Item.create_by( title:'盤洲文集八十巻', code: '145')	
 Item.create_by( title:'古霊先生文集二十五巻年譜一巻附録一巻', code: '146')	
 Item.create_by( title:'花間集十巻', code: '147')	
@@ -192,10 +188,8 @@ Item.create_by( title:'新編方輿勝覧七十巻', code: '173')
 Item.create_by( title:'十二先生詩宗集韻二十巻', code: '174')	
 Item.create_by( title:'西漢会要七十巻', code: '175')	
 Item.create_by( title:'重広眉山三蘇先生文集八十巻', code: '176')	
-"Item.create_by( title:'新刊経進詳注昌黎先生文四十巻外集十巻
-遺文三巻韓文公志三巻', code: '177')"	
-"Item.create_by( title:'誠斎先生江湖集十四巻荊溪集十四巻西帰集四巻
-南海集八巻江西道院集五巻朝天続集八巻退休集十四巻', code: '178')"	
+Item.create_by( title:'新刊経進詳注昌黎先生文四十巻外集十巻遺文三巻韓文公志三巻', code: '177')
+Item.create_by( title:'誠斎先生江湖集十四巻荊溪集十四巻西帰集四巻南海集八巻江西道院集五巻朝天続集八巻退休集十四巻', code: '178')
 Item.create_by( title:'外台秘要方四十巻', code: '179')	
 Item.create_by( title:'四書章句集注二十八巻', code: '180')	
 Item.create_by( title:'説苑二十巻', code: '181')	
@@ -299,5 +293,4 @@ Item.create_by( title:'魁本大字詳音句読孟子二巻', code: '1013')
 Item.create_by( title:'孝経一巻', code: '1014')	
 Item.create_by( title:'三輔黄図六巻', code: '1015')	
 Item.create_by( title:'古迂陳氏家塾尹文子二巻', code: '1016')	
-Item.create_by( title:'大元至元辨偽録五巻', code: '1017')	
-
+Item.create_by( title:'大元至元辨偽録五巻', code: '1017')
