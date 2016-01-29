@@ -49,9 +49,9 @@ class ItemsController < ApplicationController
     unless keyword.nil?
       keyword_itai = converter.convert_itaiji(keyword.clone)
       keyword_seiji = converter.convert_seijitai(keyword.clone)
-      @items = Item.search(:title_or_author_or_note_cont_any => [keyword_itai, keyword_seiji], code_eq: keyword, m: 'or').result
+      @items = Item.search(:code_or_title_or_author_or_note_cont_any => [keyword_itai, keyword_seiji], code_eq: keyword, m: 'or').result
     else
-      @items = Item.search(:title_or_author_or_note_cont => keyword).result
+      @items = Item.search(:code_or_title_or_author_or_note_cont => keyword).result
     end
     unless @items.any?
      flash[:danger] = "資料情報が見つかりませんでした。"
@@ -65,9 +65,9 @@ class ItemsController < ApplicationController
     unless keyword.nil?
       keyword_itai = converter.convert_itaiji(keyword.clone)
       keyword_seiji = converter.convert_seijitai(keyword.clone)
-      @items = Item.search(:title_or_author_or_note_cont_any => [keyword_itai, keyword_seiji], id_eq: keyword, m: 'or').result
+      @items = Item.search(:code_or_title_or_author_or_note_cont_any => [keyword_itai, keyword_seiji], code_eq: keyword, m: 'or').result
     else
-      @items = Item.search(:title_or_author_or_note_cont => keyword).result
+      @items = Item.search(:code_or_title_or_author_or_note_cont => keyword).result
     end
     unless @items.any?
      flash[:danger] = "資料情報が見つかりませんでした。"
