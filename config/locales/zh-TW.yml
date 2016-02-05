@@ -246,13 +246,20 @@ zh-TW:
   author: 作者
   year: 刊年
   holding: 收藏機構
-  revise_item: 更改
   add_item: 添加資料信息
   
   owner_id: 印主ID
-  revise_owner: 更改
   owner: 印主
   add_owner: 添加印主信息
   
   stamp_id: 藏書印ID
   danger: 請確認本藏書印和印主或資料之間的關係已取消。刪除後不能回覆記錄。您肯定刪除嗎?
+
+  details: 詳情
+  vap: 別名
+  history: 傳記/歷史
+  close: 關閉
+  
+  back:
+  edit:
+  delete:

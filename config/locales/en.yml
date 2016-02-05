@@ -77,7 +77,7 @@ en:
   item_search: Search Items
 
   home: Home
-  create_stamps: Create a New Stamp Record
+  create_stamps: Create
   stamp_search: Search Stamps
   search: Search
   contact: Contact
@@ -98,13 +98,16 @@ en:
   author: Author
   year: Published year
   holding: Holding
-  revise_item: Revise
   add_item: Add item
   
   owner_id: Owner id
-  revise_owner: Revise
   owner: Owner name
   add_owner: Add owner
 
   stamp_id: Stamp id
   danger: Confirm you have already unlinked relationships between the stamp and items/owners. You cannot undo a record deletion operation. Are you sure?
+  
+  details: Details
+  vap: Variant name
+  history: Biography/History
+  close: Close

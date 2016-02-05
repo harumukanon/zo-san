@@ -7,13 +7,13 @@
       </div>
       <div class="panel-body">
        <%= t('owner') %>:<%= owner.aap %><br />
-       <button class="btn btn-info btn-xs" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal">詳細</button>
+       <button class="btn btn-info btn-xs" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal"><%= t('details') %></button>
        <% if editor_signed_in? %>
-                <%= link_to t('revise_owner'), edit_owner_path(id: owner, stamp_id: @stamp.id) %>
+                <%= link_to "edit", edit_owner_path(id: owner, stamp_id: @stamp.id) %>
        <% end %>
       </div>
     </div>
-      <div id="div-modal" class="modal fade"> 
+      <div id="div-modal" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -21,15 +21,15 @@
               <h4 class="modal-title"><%= t('owner') %>:<%= owner.aap %></h4>
             </div>
             <div class="modal-body">
-              <p>別名1:<%= owner.vap1 %></p>
-              <p>別名2:<%= owner.vap2 %></p>
-              <p>別名3:<%= owner.vap3 %></p>
-              <p>伝記/歴史:<%= auto_link(owner.history, :html => { :target => '_blank' }) do |text|
+              <p><%= t('vap') %>1:<%= owner.vap1 %></p>
+              <p><%= t('vap') %>2:<%= owner.vap2 %></p>
+              <p><%= t('vap') %>3:<%= owner.vap3 %></p>
+              <p><%= t('history') %>:<%= auto_link(owner.history, :html => { :target => '_blank' }) do |text|
                 truncate(text, :length => 50)
                 end %></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('close') %></button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

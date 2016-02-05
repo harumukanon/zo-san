@@ -12,7 +12,7 @@
            <%= t('holding') %>:<%= f.holding %><br />
            <%= t('note') %>:<%= f.note %><br />
         <% if editor_signed_in? %>
-                <%= link_to t('revise_item'), edit_item_path(id: f, stamp_id: @stamp.id) %>
+                <%= link_to "edit", edit_item_path(id: f, stamp_id: @stamp.id) %>
             <% end %>
       </div>
     </div>
