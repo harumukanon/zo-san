@@ -6,11 +6,11 @@
            <h5 class="panel-title"><%= t('item_id') %>:<%= f.id %></h5>
        </div>
        <div class="panel-body">
-        <%= t('title') %>:<%= f.title %><br />
-　　　  <%= t('author') %>:<%= f.author %><br />
-　　　  <%= t('year') %>:<%= f.year %><br />
-　　　  <%= t('holding') %>:<%= f.holding %><br />
-　　　  <%= t('note') %>:<%= f.note %><br />
+           <%= t('title') %>:<%= f.title %><br />
+           <%= t('author') %>:<%= f.author %><br />
+           <%= t('year') %>:<%= f.year %><br />
+           <%= t('holding') %>:<%= f.holding %><br />
+           <%= t('note') %>:<%= f.note %><br />
         <% if editor_signed_in? %>
                 <%= link_to t('revise_item'), edit_item_path(id: f, stamp_id: @stamp.id) %>
             <% end %>
