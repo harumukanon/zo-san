@@ -1,17 +1,37 @@
 <div class="container">
   <% if @stamp.owners.exists? %>
-  　<% @stamp.owners.each do |f| %>
-    <div id="ow-<%= f.id %>" class="panel panel-success">
+  　<% @stamp.owners.each do |owner| %>
+    <div id="ow-<%= owner.id %>" class="panel panel-success">
       <div class="panel-heading">
-        <h5 class="panel-title"><%= t('owner_id') %>:<%= f.id %></h5>
+        <h5 class="panel-title"><%= t('owner_id') %>:<%= owner.id %></h5>
       </div>
       <div class="panel-body">
-       <%= t('owner') %>:<%= f.aap %><br />
+       <%= t('owner') %>:<%= owner.aap %><br />
+       <button class="btn btn-info btn-xs" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal">詳細</button>
        <% if editor_signed_in? %>
-                <%= link_to t('revise_owner'), edit_owner_path(id: f, stamp_id: @stamp.id) %>
-             <% end %>
+                <%= link_to t('revise_owner'), edit_owner_path(id: owner, stamp_id: @stamp.id) %>
+       <% end %>
       </div>
     </div>
+      <div id="div-modal" class="modal fade"> 
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title"><%= t('owner') %>:<%= owner.aap %></h4>
+            </div>
+            <div class="modal-body">
+              <p>別名1:<%= owner.vap1 %></p>
+              <p>別名2:<%= owner.vap2 %></p>
+              <p>別名3:<%= owner.vap3 %></p>
+              <p>伝記/歴史:<%= owner.history %></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div>
     <% end %>
       <%= t('add_owner') %>:
         <%= form_tag({controller: :owners, action: :search}, class: "form-inline") do %>
@@ -30,4 +50,3 @@
         <% end %>
         <% end %>
   <% end %>
-</div>
