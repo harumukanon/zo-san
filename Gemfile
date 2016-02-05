@@ -67,3 +67,5 @@ gem 'ransack'
 gem 'itaiji', :github => 'harumukanon/itaiji'
 
 gem 'pry-byebug', group: :development
+
+gem 'rails_autolink'

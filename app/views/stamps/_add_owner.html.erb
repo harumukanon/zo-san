@@ -24,7 +24,9 @@
               <p>別名1:<%= owner.vap1 %></p>
               <p>別名2:<%= owner.vap2 %></p>
               <p>別名3:<%= owner.vap3 %></p>
-              <p>伝記/歴史:<%= owner.history %></p>
+              <p>伝記/歴史:<%= auto_link(owner.history, :html => { :target => '_blank' }) do |text|
+                truncate(text, :length => 50)
+                end %></p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
