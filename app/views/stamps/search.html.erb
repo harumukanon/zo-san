@@ -20,7 +20,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @stamps.order("created_at DESC").each do |f| %>
+              <% @stamps.order("updated_at DESC").each do |f| %>
                 <tr>
                   <td><%= link_to f.id, stamp_path(f) %></td>
                   <td><%= f.face_string %></td>
