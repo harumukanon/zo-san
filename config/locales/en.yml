@@ -99,6 +99,7 @@ en:
   year: Published year
   holding: Holding
   add_item: Add item
+  publisher: Publisher
   
   owner_id: Owner id
   owner: Owner name
