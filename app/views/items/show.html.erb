@@ -18,7 +18,8 @@
       <td><%= @item.year %></td>
       <td><%= @item.publisher %></td>
       <td><%= @item.holding %></td>
-      <td><%= @item.note %></td>
+      <td><%= auto_link(@item.note, :html => { :target => '_blank' }) do |text|
+                truncate(text, :length => 50) end %></td>
     </tr>
   </tbody>
 </table>

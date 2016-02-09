@@ -16,7 +16,8 @@
       <td><%= @owner.vap1 %></td>
       <td><%= @owner.vap2 %></td>
       <td><%= @owner.vap3 %></td>
-      <td><%= @owner.history %></td>
+      <td><%= auto_link(@owner.history, :html => { :target => '_blank' }) do |text|
+                truncate(text, :length => 50) end %></td>
     </tr>
   </tbody>
 </table>
