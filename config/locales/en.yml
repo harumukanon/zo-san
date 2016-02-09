@@ -101,11 +101,11 @@ en:
   add_item: Add item
   publisher: Publisher
   
-  owner_id: Owner id
+  owner_id: Owner ID
   owner: Owner name
   add_owner: Add owner
 
-  stamp_id: Stamp id
+  stamp_id: Stamp ID
   danger: Confirm you have already unlinked relationships between the stamp and items/owners. You cannot undo a record deletion operation. Are you sure?
   
   details: Details

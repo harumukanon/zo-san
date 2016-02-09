@@ -11,16 +11,16 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th class="col-xs-1">蔵書印id</th>
-                <th class="col-xs-2">蔵書印文</th>
-                <th class="col-xs-2">蔵書印画像</th>
-                <th class="col-xs-1">印主</th>
-                <th class="col-xs-2">資料名</th>
-                <th class="col-xs-2">資料所蔵</th>
+                <th class="col-xs-1"><%= t('stamp_id') %></th>
+                <th class="col-xs-2"><%= t('face_string') %></th>
+                <th class="col-xs-2"><%= t('stamp_image') %></th>
+                <th class="col-xs-1"><%= t('owner') %></th>
+                <th class="col-xs-2"><%= t('title') %></th>
+                <th class="col-xs-2"><%= t('holding') %></th>
               </tr>
             </thead>
             <tbody>
-              <% @stamps.each do |f| %>
+              <% @stamps.order("created_at DESC").each do |f| %>
                 <tr>
                   <td><%= link_to f.id, stamp_path(f) %></td>
                   <td><%= f.face_string %></td>
