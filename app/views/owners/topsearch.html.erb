@@ -16,7 +16,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @owners.each do |owner| %>
+              <% @owners.order("updated_at DESC").each do |owner| %>
                 <tr>
                   <td><%= link_to owner.id, owner_path(owner) %></td>
                   <td><%= owner.aap %></td>
