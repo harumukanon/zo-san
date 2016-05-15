@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/harumukanon/itaiji.git
-  revision: ee21b649cda6ddb06aeeabd49f588becd6d37821
+  revision: 561262845747250363e0e81d47675eff3e2344dd
   specs:
     itaiji (0.1.4)
 
@@ -274,3 +274,9 @@ DEPENDENCIES
   sqlite3
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+RUBY VERSION
+   ruby 2.2.4p230
+
+BUNDLED WITH
+   1.12.3
