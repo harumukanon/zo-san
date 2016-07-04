@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/harumukanon/itaiji.git
-  revision: 561262845747250363e0e81d47675eff3e2344dd
+  revision: 7473f3fbec04600c51493bc7f877c534f1c7f6a1
   specs:
     itaiji (0.1.4)
 

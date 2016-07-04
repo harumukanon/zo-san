@@ -31,7 +31,9 @@
       <%= render partial: 'stamped_at', locals: {item: @item} %>
     <% end %></div>
     <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
- <% end %>
+  <% else %>
+    <%= link_to "別の資料を新規登録", new_item_path %>
+  <% end %>
 
     <% if editor_signed_in? %>
       <%= link_to "edit", edit_item_path(@item) %>

@@ -59,11 +59,11 @@ en:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
 
-  db_title: The Ownership Stamps Database ZO-SAN
+  db_title: The Seals Database ZO-SAN
   trial_operation: Currently under trial operation.
   editor_sign_up: Editor Sign Up
   titlepageinfo: |
-    ZO-SAN is a stamps database for ancient Chinese books which users can add as well as search records of stamps.
+    ZO-SAN is a database for seals in ancient Chinese books which users can add as well as search records of seals.
     This database was constructed for academic purpose, especially for Chinese bibliography.
   copyrights: All rights reserved. Unauthorized reproduction prohibited.
   editor_info: |
@@ -78,7 +78,7 @@ en:
 
   home: Home
   create_stamps: Create
-  stamp_search: Search Stamps
+  stamp_search: Search Seals
   search: Search
   contact: Contact
   manual: Manuals
@@ -105,8 +105,8 @@ en:
   owner: Owner name
   add_owner: Add owner
 
-  stamp_id: Stamp ID
-  danger: Confirm you have already unlinked relationships between the stamp and items/owners. You cannot undo a record deletion operation. Are you sure?
+  stamp_id: Seal ID
+  danger: Confirm you have already unlinked relationships between the seal and items/owners. You cannot undo a record deletion operation. Are you sure?
   
   details: Details
   vap: Variant name

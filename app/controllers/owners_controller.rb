@@ -16,7 +16,7 @@ class OwnersController < ApplicationController
   def create
     @owner = Owner.new(owner_params)
     if @owner.save
-      redirect_to owner_with_stamp_url(@owner, stamp_id: @owner.temp_stamp_id)
+      redirect_to owner_url(@owner, stamp_id: @owner.temp_stamp_id)
     else
       render 'new'
     end

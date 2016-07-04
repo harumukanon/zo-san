@@ -29,7 +29,8 @@
               <% end %>
             </tbody>
           </table>
-                <% if @stamp.present? %>
-                <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
-                <% end %>
+        <%= link_to "資料を新規登録", new_item_path(stamp_id: @stamp.id) %>
+          <% if @stamp.present? %>
+            <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
+          <% end %>
         <% end %>
