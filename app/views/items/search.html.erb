@@ -8,29 +8,53 @@
                 <th class="col-xs-2">刊年</th>
                 <th class="col-xs-2">出版者</th>
                 <th class="col-xs-2">所蔵</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
-              <% @items.each do |f| %>
+              <% @items.each do |item| %>
               <tr>
-                <td><%= link_to f.id, item_path(f) %></td>
-                <td><%= f.title %></td>
-                <td><%= f.author %></td>
-                <td><%= f.year %></td>
-                <td><%= f.publisher %></td>
-                <td><%= f.holding %></td>
-                <td id="item-<%= f.id %>">
-                  <% if @stamp.stamped?(f) %>
-                  <%= render partial: 'not_stamped_at', locals: {item: f} %>
+                <td><%= link_to item.id, item_path(item) %><button class="btn btn-info btn-xs" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal"><%= t('details') %></button></td>
+                <td><%= item.title %></td>
+                <td><%= item.author %></td>
+                <td><%= item.year %></td>
+                <td><%= item.publisher %></td>
+                <td><%= item.holding %></td>
+                <td id="item-<%= item.id %>">
+                  <% if @stamp.stamped?(item) %>
+                  <%= render partial: 'not_stamped_at', locals: {item: item} %>
                   <% else %>
-                  <%= render partial: 'stamped_at', locals: {item: f} %>
+                  <%= render partial: 'stamped_at', locals: {item: item} %>
                   <% end %>
                 </td>
-              <% end %>
+              </tr>
+              <div id="div-modal" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><%= t('title') %>:<%= item.title %></h4>
+                  </div>
+                  <div class="modal-body">
+                   <p><%= t('author') %>:<%= item.author %></p>
+                   <p><%= t('year') %>:<%= item.year %></p>
+                   <p><%= t('publisher') %>:<%= item.publisher %></p>
+                   <p><%= t('holding') %>:<%= item.holding %></p>
+                   <p><%= t('note') %>:<%= auto_link(item.note, :html => { :target => '_blank' }) do |text|
+                      truncate(text, :length => 50)
+                      end %></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('close') %></button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div>
+            <% end %>
             </tbody>
           </table>
         <%= link_to "資料を新規登録", new_item_path(stamp_id: @stamp.id) %>
           <% if @stamp.present? %>
             <%= link_to "蔵書印情報へ戻る", stamp_path(@stamp) %>
           <% end %>
-        <% end %>
+    <% end %>
