@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117105225) do
+ActiveRecord::Schema.define(version: 20160808112402) do
 
   create_table "editors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,8 +43,13 @@ ActiveRecord::Schema.define(version: 20160117105225) do
     t.string   "holding"
     t.string   "note"
     t.string   "code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "search_title"
+    t.string   "search_author"
+    t.string   "search_note"
+    t.string   "search_publisher"
+    t.string   "search_holding"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -62,9 +67,15 @@ ActiveRecord::Schema.define(version: 20160117105225) do
     t.string   "vap2"
     t.string   "vap3"
     t.string   "history"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "temp_stamp_id"
+    t.string   "ndlna"
+    t.string   "search_aap"
+    t.string   "search_vap1"
+    t.string   "search_vap2"
+    t.string   "search_vap3"
+    t.string   "search_history"
   end
 
   add_index "owners", ["temp_stamp_id"], name: "index_owners_on_temp_stamp_id"
@@ -96,8 +107,11 @@ ActiveRecord::Schema.define(version: 20160117105225) do
     t.string   "image_source"
     t.string   "face_string"
     t.string   "note"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "search_face_string"
+    t.string   "search_note"
+    t.string   "search_image_source"
   end
 
 end

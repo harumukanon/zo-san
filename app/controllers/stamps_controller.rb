@@ -72,6 +72,6 @@ class StampsController < ApplicationController
 
   def stamp_params
     params.require(:stamp).permit(:face_string, :stamp_image, :image_source,
-                                 :note, :remove_stamp_image)
+                                 :note, :remove_stamp_image, :search_face_string, :search_note, :search_image_source)
   end
 end

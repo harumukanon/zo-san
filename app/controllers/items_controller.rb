@@ -88,7 +88,7 @@ private
   
   def item_params
     params.require(:item).permit(:title, :author, :year,
-                                 :holding, :note, :temp_stamp_id, :publisher, :code)
+                                 :holding, :note, :temp_stamp_id, :publisher, :code, :search_title, :search_author, :search_note, :search_publisher, :search_holding)
   end
   
 end

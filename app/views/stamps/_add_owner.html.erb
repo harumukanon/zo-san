@@ -7,13 +7,13 @@
       </div>
       <div class="panel-body">
        <%= t('owner') %>:<%= owner.aap %><br />
-       <button class="btn btn-info btn-xs" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal"><%= t('details') %></button>
+       <button class="btn btn-info btn-xs" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal-<%= owner.id %>"><%= t('details') %></button>
        <% if editor_signed_in? %>
                 <%= link_to "edit", edit_owner_path(id: owner, stamp_id: @stamp.id) %>
        <% end %>
       </div>
     </div>
-      <div id="div-modal" class="modal fade">
+      <div id="div-modal-<%= owner.id %>" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">

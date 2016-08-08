@@ -7,19 +7,16 @@
                 <th class="col-xs-2"><%= t('vap') %>1</th>
                 <th class="col-xs-2"><%= t('vap') %>2</th>
                 <th class="col-xs-2"><%= t('vap') %>3</th>
-                <th class="col-xs-5"><%= t('history') %></th>
               </tr>
             </thead>
             <tbody>
               <% @owners.each do |f| %>
               <tr>
-                <td><%= f.id %></td>
+                <td><%= f.id %><button class="btn btn-info btn-xs" onclick="window.location.href='#div-modal'" type="button" data-toggle="modal" data-target="#div-modal-<%= f.id %>"><%= t('details') %></button></td>
                 <td><%= f.aap %></td>
                 <td><%= f.vap1 %></td>
                 <td><%= f.vap2 %></td>
                 <td><%= f.vap3 %></td>
-                <td><%= auto_link(f.history, :html => { :target => '_blank' }) do |text|
-                truncate(text, :length => 50) end %></td>
                 <td id="owner-<%= f.id %>">
                   <% if @stamp.own?(f) %>
                   <%= render partial: 'not_owned', locals: {owner: f} %>
@@ -28,6 +25,29 @@
                   <% end %>
                 </td>
               </tr>
+              <div id="div-modal-<%= f.id %>" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><%= t('owner') %>:<%= f.aap %></h4>
+                  </div>
+                  <div class="modal-body">
+                   <p><%= t('vap') %>1:<%= f.vap1 %></p>
+                   <p><%= t('vap') %>2:<%= f.vap2 %></p>
+                   <p><%= t('vap') %>3:<%= f.vap3 %></p>
+                   <p>NDLNA:<%= auto_link(f.ndlna, :html => { :target => '_blank' }) do |text|
+                truncate(text, :length => 50) end %></p>
+                   <p><%= t('history') %>:<%= auto_link(f.history, :html => { :target => '_blank' }) do |text|
+                      truncate(text, :length => 50)
+                      end %></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('close') %></button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div>
               <% end %>
             </tbody>
           </table>

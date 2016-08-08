@@ -6,6 +6,7 @@
       <th class="col-xs-2"><%= t('vap') %>1</th>
       <th class="col-xs-2"><%= t('vap') %>2</th>
       <th class="col-xs-2"><%= t('vap') %>3</th>
+      <th class="col-xs-2">NDLNA</th>
       <th class="col-xs-5"><%= t('history') %></th>
     </tr>
   </thead>
@@ -16,6 +17,8 @@
       <td><%= @owner.vap1 %></td>
       <td><%= @owner.vap2 %></td>
       <td><%= @owner.vap3 %></td>
+      <td><%= auto_link(@owner.ndlna, :html => { :target => '_blank' }) do |text|
+                truncate(text, :length => 50) end %></td>
       <td><%= auto_link(@owner.history, :html => { :target => '_blank' }) do |text|
                 truncate(text, :length => 50) end %></td>
     </tr>

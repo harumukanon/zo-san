@@ -88,6 +88,6 @@ class OwnersController < ApplicationController
   
   def owner_params
     params.require(:owner).permit(:aap, :vap1, :vap2,
-                                 :vap3, :temp_stamp_id, :history)
+                                 :vap3, :temp_stamp_id, :history, :ndlna, :search_aap, :search_vap1, :search_vap2, :search_vap3, :search_history)
   end
 end
